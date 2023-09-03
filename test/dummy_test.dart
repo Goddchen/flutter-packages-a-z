@@ -7,7 +7,7 @@ void main() {
       (WidgetTester widgetTester) async {
     await widgetTester.pumpWidget(
       FlutterDeckApp(
-        slides: const [
+        slides: const <FlutterDeckSlide>[
           TitleSlide(),
         ],
       ),
