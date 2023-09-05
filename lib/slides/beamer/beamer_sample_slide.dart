@@ -19,8 +19,7 @@ class BeamerSampleSlide extends FlutterDeckSplitSlide {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           FlutterDeckCodeHighlight(
-            code:
-                '''
+            code: '''
 BeamerDelegate(
   initialPath: _beamerRoute,
   locationBuilder: RoutesLocationBuilder(
@@ -57,8 +56,7 @@ BeamerDelegate(
           ),
           SizedBox(height: 16),
           FlutterDeckCodeHighlight(
-            code:
-                '''
+            code: '''
 MaterialApp.router(
   routeInformationParser: BeamerParser(),
   routerDelegate: _createBeamerDelegate(),
