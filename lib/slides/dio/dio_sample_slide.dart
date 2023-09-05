@@ -12,50 +12,53 @@ class DioSampleSlide extends FlutterDeckSplitSlide {
         );
 
   @override
-  Widget left(BuildContext context) => const FlutterDeckCodeHighlight(
-        code: '''
-Future<Response<Object>>? future;
-return StatefulBuilder(
-  builder:
-      (BuildContext context, void Function(void Function()) setState) =>
-          Column(
-    mainAxisSize: MainAxisSize.min,
-    children: <Widget>[
-      ElevatedButton(
-        onPressed: () {
-          setState(
-            () {
-              future =
-                  Dio().get('https://loripsum.net/api/1/short/plaintext');
-              );
-            },
-          );
-        },
-        child: const Text('Issue request'),
-      ),
-      const SizedBox(height: 16),
-      if (future != null)
-        FutureBuilder<Response<Object>>(
-          future: future,
-          builder: (
-            BuildContext context,
-            AsyncSnapshot<Response<Object>> snapshot,
-          ) =>
-              snapshot.hasError
-                  ? const Text('Error')
-                  : snapshot.hasData
-                      ? Text(
-                          snapshot.data?.data?.toString() ??
-                              'Empty response',
-                        )
-                      : CircularProgressIndicator(
-                          color: Theme.of(context).colorScheme.secondary,
-                        ),
+  Widget left(BuildContext context) => const SingleChildScrollView(
+        child: FlutterDeckCodeHighlight(
+          code:
+              '''
+  Future<Response<Object>>? future;
+  return StatefulBuilder(
+    builder:
+        (BuildContext context, void Function(void Function()) setState) =>
+            Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        ElevatedButton(
+          onPressed: () {
+            setState(
+              () {
+                future =
+                    Dio().get('https://loripsum.net/api/1/short/plaintext');
+                );
+              },
+            );
+          },
+          child: const Text('Issue request'),
         ),
-    ],
-  ),
-);''',
-        textStyle: TextStyle(fontSize: 20),
+        const SizedBox(height: 16),
+        if (future != null)
+          FutureBuilder<Response<Object>>(
+            future: future,
+            builder: (
+              BuildContext context,
+              AsyncSnapshot<Response<Object>> snapshot,
+            ) =>
+                snapshot.hasError
+                    ? const Text('Error')
+                    : snapshot.hasData
+                        ? Text(
+                            snapshot.data?.data?.toString() ??
+                                'Empty response',
+                          )
+                        : CircularProgressIndicator(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+          ),
+      ],
+    ),
+  );''',
+          textStyle: TextStyle(fontSize: 20),
+        ),
       );
 
   @override
@@ -71,8 +74,9 @@ return StatefulBuilder(
             onPressed: () {
               setState(
                 () {
-                  future =
-                      Dio().get('https://loripsum.net/api/1/short/plaintext');
+                  future = Dio().get(
+                    'https://dinoipsum.com/api/?format=text&paragraphs=1&words=20',
+                  );
                 },
               );
             },
