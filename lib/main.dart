@@ -5,6 +5,8 @@ import 'package:flutter_packages_a_z/services/navigation_service.dart';
 import 'package:flutter_packages_a_z/slides/austerity/austerity_slide.dart';
 import 'package:flutter_packages_a_z/slides/beamer/beamer_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/beamer/beamer_slide.dart';
+import 'package:flutter_packages_a_z/slides/cached_network_image/cached_network_image_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/cached_network_image/cached_network_image_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_slide.dart';
 import 'package:flutter_packages_a_z/slides/title/title_slide.dart';
@@ -20,13 +22,15 @@ void main() {
         socialHandle: '@Goddchen',
         imagePath: Assets.avatar.path,
       ),
-      slides: const <FlutterDeckSlide>[
-        TitleSlide(),
-        AusteritySlide(),
-        BeamerSlide(),
-        BeamerSampleSlide(),
-        EquatableSlide(),
-        EquatableSampleSlide(),
+      slides: <FlutterDeckSlide>[
+        const TitleSlide(),
+        const AusteritySlide(),
+        const BeamerSlide(),
+        const BeamerSampleSlide(),
+        const CachedNetworkImageSlide(),
+        CachedNetworkImageSampleSlide(),
+        const EquatableSlide(),
+        const EquatableSampleSlide(),
       ],
     ),
   );

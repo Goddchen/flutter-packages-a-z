@@ -8,6 +8,7 @@ class BeamerSlide extends FlutterDeckSplitSlide {
   const BeamerSlide({super.key})
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            header: FlutterDeckHeaderConfiguration(title: 'beamer'),
             route: '/beamer',
             steps: 4,
           ),
