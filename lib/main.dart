@@ -9,6 +9,9 @@ import 'package:flutter_packages_a_z/slides/cached_network_image/cached_network_
 import 'package:flutter_packages_a_z/slides/cached_network_image/cached_network_image_slide.dart';
 import 'package:flutter_packages_a_z/slides/dio/dio_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/dio/dio_slide.dart';
+import 'package:flutter_packages_a_z/slides/equatable/equatable_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/equatable/equatable_slide.dart';
+import 'package:flutter_packages_a_z/slides/fpdart/fpdart_slide.dart';
 import 'package:flutter_packages_a_z/slides/title/title_slide.dart';
 import 'package:get_it/get_it.dart';
 
@@ -31,6 +34,9 @@ void main() {
         CachedNetworkImageSampleSlide(),
         const DioSlide(),
         const DioSampleSlide(),
+        const EquatableSlide(),
+        const EquatableSampleSlide(),
+        const FpDartSlide(),
       ],
     ),
   );
