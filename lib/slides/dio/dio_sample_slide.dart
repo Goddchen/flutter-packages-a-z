@@ -14,7 +14,7 @@ class DioSampleSlide extends FlutterDeckSplitSlide {
   @override
   Widget left(BuildContext context) => const SingleChildScrollView(
         child: FlutterDeckCodeHighlight(
-          code: '''
+          code: r'''
 Future<Response<Object>>? future;
 return StatefulBuilder(
   builder:
@@ -26,8 +26,8 @@ return StatefulBuilder(
         onPressed: () {
           setState(
             () {
-              future =
-                  Dio().get('https://loripsum.net/api/1/short/plaintext');
+              future = Dio().get(
+                'https://dinoipsum.com/api/?format=text&paragraphs=1&words=20',
               );
             },
           );
@@ -43,11 +43,15 @@ return StatefulBuilder(
             AsyncSnapshot<Response<Object>> snapshot,
           ) =>
               snapshot.hasError
-                  ? const Text('Error')
+                  ? Text(
+                      'Error: ${snapshot.error}',
+                      textAlign: TextAlign.center,
+                    )
                   : snapshot.hasData
                       ? Text(
-                          snapshot.data?.data?.toString() ??
-                              'Empty response',
+                          'Response: '
+                          '${snapshot.data?.data?.toString() ?? 'empty'}',
+                          textAlign: TextAlign.center,
                         )
                       : CircularProgressIndicator(
                           color: Theme.of(context).colorScheme.secondary,
@@ -96,7 +100,8 @@ return StatefulBuilder(
                         )
                       : snapshot.hasData
                           ? Text(
-                              '''Response: ${snapshot.data?.data?.toString() ?? 'empty'}''',
+                              'Response: '
+                              '${snapshot.data?.data?.toString() ?? 'empty'}',
                               textAlign: TextAlign.center,
                             )
                           : CircularProgressIndicator(
