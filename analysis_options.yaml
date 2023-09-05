@@ -5,3 +5,4 @@ linter:
     always_specify_types: true
     public_member_api_docs: false
     prefer_expression_function_bodies: true
+    sort_constructors_first: false
