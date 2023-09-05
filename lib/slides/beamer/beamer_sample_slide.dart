@@ -6,6 +6,7 @@ class BeamerSampleSlide extends FlutterDeckSplitSlide {
   const BeamerSampleSlide({super.key})
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            header: FlutterDeckHeaderConfiguration(title: 'beamer'),
             route: '/beamer-sample',
           ),
         );
