@@ -7,6 +7,8 @@ import 'package:flutter_packages_a_z/slides/beamer/beamer_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/beamer/beamer_slide.dart';
 import 'package:flutter_packages_a_z/slides/cached_network_image/cached_network_image_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/cached_network_image/cached_network_image_slide.dart';
+import 'package:flutter_packages_a_z/slides/dio/dio_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/dio/dio_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_slide.dart';
 import 'package:flutter_packages_a_z/slides/fpdart/fpdart_slide.dart';
@@ -30,6 +32,8 @@ void main() {
         const BeamerSampleSlide(),
         const CachedNetworkImageSlide(),
         CachedNetworkImageSampleSlide(),
+        const DioSlide(),
+        const DioSampleSlide(),
         const EquatableSlide(),
         const EquatableSampleSlide(),
         const FpDartSlide(),
