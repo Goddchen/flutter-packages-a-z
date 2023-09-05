@@ -6,6 +6,7 @@ class BeamerSampleSlide extends FlutterDeckSplitSlide {
   const BeamerSampleSlide({super.key})
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            header: FlutterDeckHeaderConfiguration(title: 'beamer'),
             route: '/beamer-sample',
           ),
         );
@@ -18,7 +19,8 @@ class BeamerSampleSlide extends FlutterDeckSplitSlide {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           FlutterDeckCodeHighlight(
-            code: '''
+            code:
+                '''
 BeamerDelegate(
   initialPath: _beamerRoute,
   locationBuilder: RoutesLocationBuilder(
@@ -55,7 +57,8 @@ BeamerDelegate(
           ),
           SizedBox(height: 16),
           FlutterDeckCodeHighlight(
-            code: '''
+            code:
+                '''
 MaterialApp.router(
   routeInformationParser: BeamerParser(),
   routerDelegate: _createBeamerDelegate(),

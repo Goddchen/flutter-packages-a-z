@@ -8,6 +8,7 @@ class AusteritySlide extends FlutterDeckSplitSlide {
   const AusteritySlide({super.key})
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            header: FlutterDeckHeaderConfiguration(title: 'austerity'),
             route: '/austerity',
             steps: 5,
           ),
