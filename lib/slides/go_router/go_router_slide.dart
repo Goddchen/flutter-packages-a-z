@@ -4,30 +4,29 @@ import 'package:flutter_packages_a_z/constants.dart';
 import 'package:flutter_packages_a_z/widgets/bullet_point.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
 
-class BeamerSlide extends FlutterDeckSplitSlide {
-  const BeamerSlide({super.key})
+class GoRouterSlide extends FlutterDeckSplitSlide {
+  const GoRouterSlide({super.key})
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            header: FlutterDeckHeaderConfiguration(title: 'beamer'),
-            route: '/beamer',
+            header: FlutterDeckHeaderConfiguration(title: 'go_router'),
+            route: '/go-router',
             steps: 5,
           ),
         );
 
   @override
   Widget left(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const PackageBadge(
-            author: 'beamer.dev',
-            likes: 1113,
-            name: 'beamer',
-            version: '1.5.6',
+            author: 'flutter.dev',
+            likes: 3324,
+            name: 'go_router',
+            version: '10.1.2',
           ),
           const SizedBox(height: 32),
           Text(
-            '''Beamer uses the power of Router and implements all the underlying logic for you, letting you explore arbitrarily complex navigation scenarios with ease.''',
+            '''A declarative routing package for Flutter that uses the Router API to provide a convenient, url-based API for navigating between different screens. You can define URL patterns, navigate using a URL, handle deep links, and a number of other navigation-related scenarios.''',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
         ],
@@ -46,10 +45,7 @@ class BeamerSlide extends FlutterDeckSplitSlide {
             AnimatedOpacity(
               opacity: stepNumber >= 3 ? 1 : 0,
               duration: stepAnimationDuration,
-              child: const BulletPoint(
-                text:
-                    '''Works with BeamLocations, which contain a stack of BeamPages''',
-              ),
+              child: const BulletPoint(text: 'Maintained by Flutter team'),
             ),
             AnimatedOpacity(
               opacity: stepNumber >= 4 ? 1 : 0,
@@ -64,39 +60,38 @@ class BeamerSlide extends FlutterDeckSplitSlide {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   FlutterDeckCodeHighlight(
-                    code: r'$ flutter pub add beamer',
+                    code: r'$ flutter pub add go_router',
                     language: 'bash',
                     textStyle: TextStyle(fontSize: 24),
                   ),
                   SizedBox(height: 16),
                   FlutterDeckCodeHighlight(
-                    code:
-                        '''
-final routerDelegate = BeamerDelegate(
-  locationBuilder: RoutesLocationBuilder(
-    routes: {
-      '/': (context, state, data) => HomeScreen(),
-      // ...
-    },
-  ),
-);''',
-                    textStyle: TextStyle(fontSize: 24),
-                  ),
-                  SizedBox(height: 16),
-                  FlutterDeckCodeHighlight(
-                    code:
-                        '''
+                    code: '''
+final _router = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (context, state) => HomeScreen(),
+    ),
+  ],
+);
+
 MaterialApp.router(
-  routeInformationParser: BeamerParser(),
-  routerDelegate: routerDelegate,
+  routerConfig: _router,
 );''',
                     textStyle: TextStyle(fontSize: 24),
                   ),
                   SizedBox(height: 16),
                   FlutterDeckCodeHighlight(
-                    code: '''Beamer.of(context).beamToNamed('/route');''',
+                    code: '''context.go('/profile');''',
                     textStyle: TextStyle(fontSize: 24),
                   ),
+                  SizedBox(height: 16),
+                  FlutterDeckCodeHighlight(
+                    code: '''GoRouter.of(context).go('/profile');''',
+                    textStyle: TextStyle(fontSize: 24),
+                  ),
+                  SizedBox(height: 16),
                 ],
               ),
             ),

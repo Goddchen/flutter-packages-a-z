@@ -12,6 +12,8 @@ import 'package:flutter_packages_a_z/slides/dio/dio_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_slide.dart';
 import 'package:flutter_packages_a_z/slides/fpdart/fpdart_slide.dart';
+import 'package:flutter_packages_a_z/slides/go_router/go_router_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/go_router/go_router_slide.dart';
 import 'package:flutter_packages_a_z/slides/title/title_slide.dart';
 import 'package:get_it/get_it.dart';
 
@@ -37,6 +39,8 @@ void main() {
         const EquatableSlide(),
         const EquatableSampleSlide(),
         const FpDartSlide(),
+        const GoRouterSlide(),
+        const GoRouterSampleSlide(),
       ],
     ),
   );
