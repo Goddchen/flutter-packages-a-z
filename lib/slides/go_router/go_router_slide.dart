@@ -66,7 +66,8 @@ class GoRouterSlide extends FlutterDeckSplitSlide {
                   ),
                   SizedBox(height: 16),
                   FlutterDeckCodeHighlight(
-                    code: '''
+                    code:
+                        '''
 final _router = GoRouter(
   routes: [
     GoRoute(
