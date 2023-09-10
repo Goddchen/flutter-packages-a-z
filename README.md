@@ -26,5 +26,5 @@
 - V: https://pub.dev/packages/video_player
 - W: https://pub.dev/packages/wakelock_plus
 - X:
-- Y: https://pub.dev/packages/youtube_player_flutter
+- Y: https://pub.dev/packages/youtube_player_iframe
 - Z: https://pub.dev/packages/flutter_zoom_drawer
