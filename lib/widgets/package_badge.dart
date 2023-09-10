@@ -39,7 +39,7 @@ class PackageBadge extends StatelessWidget {
         color: Theme.of(context).colorScheme.secondaryContainer,
         child: InkWell(
           onTap: () => GetIt.I<NavigationService>().openLink(
-            link: Uri.parse('https://pub.dev/packages/austerity'),
+            link: Uri.parse('https://pub.dev/packages/$_name'),
           ),
           borderRadius: BorderRadius.circular(16),
           child: Padding(
