@@ -18,6 +18,8 @@ import 'package:flutter_packages_a_z/slides/just_audio/just_audio_sample_slide.d
 import 'package:flutter_packages_a_z/slides/just_audio/just_audio_slide.dart';
 import 'package:flutter_packages_a_z/slides/lottie/lottie_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/lottie/lottie_slide.dart';
+import 'package:flutter_packages_a_z/slides/share_plus/share_plus_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/share_plus/share_plus_slide.dart';
 import 'package:flutter_packages_a_z/slides/title/title_slide.dart';
 import 'package:get_it/get_it.dart';
 
@@ -49,6 +51,8 @@ void main() {
         const JustAudioSampleSlide(),
         const LottieSlide(),
         const LottieSampleSlide(),
+        const SharePlusSlide(),
+        const SharePlusSampleSlide(),
       ],
     ),
   );
