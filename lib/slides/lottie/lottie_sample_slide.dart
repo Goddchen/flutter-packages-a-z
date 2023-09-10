@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:flutter_packages_a_z/gen/assets.gen.dart';
 import 'package:lottie/lottie.dart';
 
 class LottieSampleSlide extends FlutterDeckSplitSlide {
@@ -15,11 +16,11 @@ class LottieSampleSlide extends FlutterDeckSplitSlide {
   @override
   Widget left(BuildContext context) => const FlutterDeckCodeHighlight(
         code: '''
-Lottie.network(
+Lottie.asset(
   fit: BoxFit.contain,
   height: 300,
   width: 300,
-  'lottie-sample.json',
+  Assets.lottieSample,
 );''',
         textStyle: TextStyle(fontSize: 20),
       );
@@ -29,6 +30,6 @@ Lottie.network(
         fit: BoxFit.contain,
         height: 300,
         width: 300,
-        'lottie-sample.json',
+        Assets.lottieSample,
       );
 }
