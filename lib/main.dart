@@ -11,6 +11,8 @@ import 'package:flutter_packages_a_z/slides/dio/dio_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/dio/dio_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_slide.dart';
+import 'package:flutter_packages_a_z/slides/flutter_zoom_drawer/flutter_zoom_drawer_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/flutter_zoom_drawer/flutter_zoom_drawer_slide.dart';
 import 'package:flutter_packages_a_z/slides/fpdart/fpdart_slide.dart';
 import 'package:flutter_packages_a_z/slides/go_router/go_router_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/go_router/go_router_slide.dart';
@@ -61,6 +63,8 @@ void main() {
         const SharePlusSampleSlide(),
         const YoutubePlayerIframeSlide(),
         const YoutubePlayerIframeSampleSlide(),
+        const FlutterZoomDrawerSlide(),
+        const FlutterZoomDrawerSampleSlide(),
       ],
     ),
   );
