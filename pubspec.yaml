@@ -15,6 +15,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_deck: ^0.3.0
+  flutter_hooks: ^0.20.1
   flutter_zoom_drawer: ^3.1.1
   fpdart: ^1.1.0
   get_it: ^7.6.2

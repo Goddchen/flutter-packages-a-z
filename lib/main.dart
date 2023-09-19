@@ -11,6 +11,8 @@ import 'package:flutter_packages_a_z/slides/dio/dio_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/dio/dio_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/equatable/equatable_slide.dart';
+import 'package:flutter_packages_a_z/slides/flutter_hooks/flutter_hooks_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/flutter_hooks/flutter_hooks_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_zoom_drawer/flutter_zoom_drawer_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_zoom_drawer/flutter_zoom_drawer_slide.dart';
 import 'package:flutter_packages_a_z/slides/fpdart/fpdart_slide.dart';
@@ -53,6 +55,8 @@ void main() {
         const FpDartSlide(),
         const GoRouterSlide(),
         const GoRouterSampleSlide(),
+        const FlutterHooksSlide(),
+        const FlutterHooksSampleSlide(),
         const JustAudioSlide(),
         const JustAudioSampleSlide(),
         const LottieSlide(),
