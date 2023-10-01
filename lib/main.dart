@@ -27,6 +27,8 @@ import 'package:flutter_packages_a_z/slides/qr_flutter/qr_flutter_slide.dart';
 import 'package:flutter_packages_a_z/slides/share_plus/share_plus_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/share_plus/share_plus_slide.dart';
 import 'package:flutter_packages_a_z/slides/title/title_slide.dart';
+import 'package:flutter_packages_a_z/slides/url_launcher/url_launcher_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/url_launcher/url_launcher_slide.dart';
 import 'package:flutter_packages_a_z/slides/video_player/video_player_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/video_player/video_player_slide.dart';
 import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player_iframe_sample_slide.dart';
@@ -67,6 +69,8 @@ void main() {
         const QrFlutterSampleSlide(),
         const SharePlusSlide(),
         const SharePlusSampleSlide(),
+        const UrlLauncherSlide(),
+        const UrlLauncherSampleSlide(),
         const VideoPlayerSlide(),
         const VideoPlayerSampleSlide(),
         const YoutubePlayerIframeSlide(),
