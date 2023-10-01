@@ -13,32 +13,32 @@ class UrlLauncherSampleSlide extends FlutterDeckSplitSlide {
 
   @override
   Widget left(BuildContext context) => const FlutterDeckCodeHighlight(
-        code: r'''
+        code: '''
 Column(
   mainAxisSize: MainAxisSize.min,
   children: <Widget>[
     ElevatedButton(
       onPressed: () => launchUrl(
-        Uri.base,
+        Uri.parse('https://flutter-packages-a-z.web.app/'),
         mode: LaunchMode.externalApplication,
       ),
-      child: Text('Open external (${Uri.base})'),
+      child: const Text('Open external'),
     ),
     const SizedBox(height: 16),
     ElevatedButton(
       onPressed: () => launchUrl(
-        Uri.base,
+        Uri.parse('https://flutter-packages-a-z.web.app/'),
         mode: LaunchMode.inAppWebView,
       ),
-      child: Text('Open in WebView (${Uri.base})'),
+      child: const Text('Open in WebView'),
     ),
     const SizedBox(height: 16),
     ElevatedButton(
       onPressed: () => launchUrl(
-        Uri.base,
+        Uri.parse('https://flutter-packages-a-z.web.app/'),
         mode: LaunchMode.externalNonBrowserApplication,
       ),
-      child: Text('Open by OS (${Uri.base})'),
+      child: const Text('Open by OS'),
     ),
     const SizedBox(height: 16),
     ElevatedButton(
