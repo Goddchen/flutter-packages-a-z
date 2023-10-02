@@ -31,6 +31,8 @@ import 'package:flutter_packages_a_z/slides/url_launcher/url_launcher_sample_sli
 import 'package:flutter_packages_a_z/slides/url_launcher/url_launcher_slide.dart';
 import 'package:flutter_packages_a_z/slides/video_player/video_player_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/video_player/video_player_slide.dart';
+import 'package:flutter_packages_a_z/slides/xml/xml_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/xml/xml_slide.dart';
 import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player_iframe_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player_iframe_slide.dart';
 import 'package:get_it/get_it.dart';
@@ -73,6 +75,8 @@ void main() {
         const UrlLauncherSampleSlide(),
         const VideoPlayerSlide(),
         const VideoPlayerSampleSlide(),
+        XmlSlide(),
+        XmlSampleSlide(),
         const YoutubePlayerIframeSlide(),
         const YoutubePlayerIframeSampleSlide(),
         const FlutterZoomDrawerSlide(),
