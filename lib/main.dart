@@ -15,6 +15,8 @@ import 'package:flutter_packages_a_z/slides/flutter_hooks/flutter_hooks_sample_s
 import 'package:flutter_packages_a_z/slides/flutter_hooks/flutter_hooks_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_zoom_drawer/flutter_zoom_drawer_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_zoom_drawer/flutter_zoom_drawer_slide.dart';
+import 'package:flutter_packages_a_z/slides/fluttertoast/fluttertoast_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/fluttertoast/fluttertoast_slide.dart';
 import 'package:flutter_packages_a_z/slides/fpdart/fpdart_slide.dart';
 import 'package:flutter_packages_a_z/slides/go_router/go_router_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/go_router/go_router_slide.dart';
@@ -71,6 +73,8 @@ void main() {
         const QrFlutterSampleSlide(),
         const SharePlusSlide(),
         const SharePlusSampleSlide(),
+        FlutterToastSlide(),
+        FlutterToastSampleSlide(),
         const UrlLauncherSlide(),
         const UrlLauncherSampleSlide(),
         const VideoPlayerSlide(),

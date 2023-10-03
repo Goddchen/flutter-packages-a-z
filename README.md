@@ -25,6 +25,6 @@
 - U: https://pub.dev/packages/url_launcher
 - V: https://pub.dev/packages/video_player
 - W: https://pub.dev/packages/wakelock_plus
-- X:
+- X: https://pub.dev/packages/xml (thanks @ayato91 for suggestion this one)
 - Y: https://pub.dev/packages/youtube_player_iframe
 - Z: https://pub.dev/packages/flutter_zoom_drawer
