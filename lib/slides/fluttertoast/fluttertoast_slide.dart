@@ -34,8 +34,7 @@ class FlutterToastSlide extends OverviewSlide {
           route: '/flutter-toast',
           samples: <FlutterDeckCodeHighlight>[
             const FlutterDeckCodeHighlight(
-              code:
-                  '''
+              code: '''
 Fluttertoast.showToast(
   msg: "This is Center Short Toast",
   toastLength: Toast.LENGTH_SHORT,

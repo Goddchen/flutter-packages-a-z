@@ -37,8 +37,7 @@ class XmlSlide extends OverviewSlide {
           route: '/xml',
           samples: <FlutterDeckCodeHighlight>[
             const FlutterDeckCodeHighlight(
-              code:
-                  '''
+              code: '''
 final bookshelfXml = \'\'\'<?xml version="1.0"?>
   <bookshelf>
     <book>
