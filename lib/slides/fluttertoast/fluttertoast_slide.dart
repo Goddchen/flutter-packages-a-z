@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/overview_slide.dart';
 import 'package:flutter_packages_a_z/widgets/bullet_point.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
@@ -30,7 +32,10 @@ class FlutterToastSlide extends OverviewSlide {
           },
           packageVersion: '8.2.2',
           route: '/flutter-toast',
-          sampleCode: '''
+          samples: <FlutterDeckCodeHighlight>[
+            const FlutterDeckCodeHighlight(
+              code:
+                  '''
 Fluttertoast.showToast(
   msg: "This is Center Short Toast",
   toastLength: Toast.LENGTH_SHORT,
@@ -40,6 +45,9 @@ Fluttertoast.showToast(
   textColor: Colors.white,
   fontSize: 16.0
 );''',
+              textStyle: TextStyle(fontSize: 24),
+            ),
+          ],
           title: 'fluttertoast',
         );
 }
