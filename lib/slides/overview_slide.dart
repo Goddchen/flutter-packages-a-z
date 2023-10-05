@@ -13,7 +13,7 @@ class OverviewSlide extends FlutterDeckSplitSlide {
   final String packageName;
   final Set<SupportedPlatform> packageSupportedPlatforms;
   final String packageVersion;
-  final String sampleCode;
+  final Iterable<FlutterDeckCodeHighlight> samples;
 
   OverviewSlide({
     required this.bulletPoints,
@@ -24,7 +24,7 @@ class OverviewSlide extends FlutterDeckSplitSlide {
     required this.packageSupportedPlatforms,
     required this.packageVersion,
     required String route,
-    required this.sampleCode,
+    required this.samples,
     required String title,
     super.key,
   }) : super(
@@ -78,10 +78,12 @@ class OverviewSlide extends FlutterDeckSplitSlide {
                     textStyle: const TextStyle(fontSize: 24),
                   ),
                   const SizedBox(height: 16),
-                  FlutterDeckCodeHighlight(
-                    code: sampleCode,
-                    textStyle: const TextStyle(fontSize: 24),
-                  ),
+                  ...samples.expand(
+                    (FlutterDeckCodeHighlight element) => <Widget>[
+                      element,
+                      const SizedBox(height: 16),
+                    ],
+                  )..dropRight(),
                 ],
               ),
             ),

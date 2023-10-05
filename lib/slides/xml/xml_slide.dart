@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/overview_slide.dart';
 import 'package:flutter_packages_a_z/widgets/bullet_point.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
@@ -33,7 +35,9 @@ class XmlSlide extends OverviewSlide {
           },
           packageVersion: '6.4.2',
           route: '/xml',
-          sampleCode: '''
+          samples: <FlutterDeckCodeHighlight>[
+            const FlutterDeckCodeHighlight(
+              code: '''
 final bookshelfXml = \'\'\'<?xml version="1.0"?>
   <bookshelf>
     <book>
@@ -47,6 +51,9 @@ final bookshelfXml = \'\'\'<?xml version="1.0"?>
     <price>132.00</price>
   </bookshelf>\'\'\';
 final document = XmlDocument.parse(bookshelfXml);''',
+              textStyle: TextStyle(fontSize: 24),
+            ),
+          ],
           title: 'xml',
         );
 }
