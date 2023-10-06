@@ -10,6 +10,7 @@ jobs:
           cache: true
           flutter-version: "3.13.0"
       - run: flutter build web
+      - run: cp -r build/web/assets/packages build/web/packages
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_PACKAGES_A_Z }}"
