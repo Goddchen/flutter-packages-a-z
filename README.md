@@ -16,7 +16,7 @@
 - L: https://pub.dev/packages/lottie
 - M: https://pub.dev/packages/mason
 - N: https://pub.dev/packages/flutter_native_splash
-- O: https://pub.dev/packages/objectbox
+- O: https://pub.dev/packages/flutter_osm_plugin
 - P: https://pub.dev/packages/path_provider
 - Q: https://pub.dev/packages/qr_flutter
 - R: https://pub.dev/packages/riverpod
