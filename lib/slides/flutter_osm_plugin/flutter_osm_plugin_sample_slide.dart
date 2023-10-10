@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 
 class FlutterOsmPluginSampleSlide extends SampleSlide {
-  FlutterOsmPluginSampleSlide({super.key})
+  FlutterOsmPluginSampleSlide()
       : super(
           route: '/flutter-osm-plugin-sample',
-          sampleCode: '''
+          sampleCodes: const <Widget>[
+            FlutterDeckCodeHighlight(
+              code: '''
 class _MapWidgetState extends State<_MapWidget> {
   static final GeoPoint _home = GeoPoint(
     latitude: 47.672982,
@@ -39,6 +42,8 @@ class _MapWidgetState extends State<_MapWidget> {
         ),
       );
 }''',
+            ),
+          ],
           sampleWidget: const _MapWidget(),
           title: 'flutter_osm_plugin',
         );

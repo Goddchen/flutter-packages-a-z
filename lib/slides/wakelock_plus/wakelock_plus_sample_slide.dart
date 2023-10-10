@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 class WakelockPlusSampleSlide extends SampleSlide {
-  WakelockPlusSampleSlide({super.key})
+  WakelockPlusSampleSlide()
       : super(
           route: '/wakelock-plus-sample',
-          sampleCode: r'''
+          sampleCodes: const <Widget>[
+            FlutterDeckCodeHighlight(
+              code: r'''
 StatefulBuilder(
   builder: (
     BuildContext context,
@@ -33,6 +36,8 @@ StatefulBuilder(
     ],
   ),
 );''',
+            ),
+          ],
           sampleWidget: StatefulBuilder(
             builder: (
               BuildContext context,

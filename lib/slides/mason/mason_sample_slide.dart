@@ -3,10 +3,10 @@ import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 
 class MasonSampleSlide extends SampleSlide {
-  MasonSampleSlide({super.key})
+  MasonSampleSlide()
       : super(
           route: '/mason-sample',
-          sampleCode: '',
+          sampleCodes: const <Widget>[],
           sampleWidget: const Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[

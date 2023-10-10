@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class FlutterToastSampleSlide extends SampleSlide {
-  FlutterToastSampleSlide({
-    super.key,
-  }) : super(
+  FlutterToastSampleSlide()
+      : super(
           route: '/flutter-toast-sample',
-          sampleCode: '''
+          sampleCodes: const <Widget>[
+            FlutterDeckCodeHighlight(
+              code: '''
 FToast().init(context);
 return Column(
   mainAxisSize: MainAxisSize.min,
@@ -49,6 +51,8 @@ return Column(
     const SizedBox(height: 16),
   ],
 );''',
+            ),
+          ],
           sampleWidget: Builder(
             builder: (BuildContext context) {
               FToast().init(context);

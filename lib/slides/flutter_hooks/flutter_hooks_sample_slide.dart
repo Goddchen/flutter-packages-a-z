@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 import 'package:fpdart/fpdart.dart';
 
-class FlutterHooksSampleSlide extends FlutterDeckSplitSlide {
-  const FlutterHooksSampleSlide({super.key})
+class FlutterHooksSampleSlide extends SampleSlide {
+  FlutterHooksSampleSlide()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            header: FlutterDeckHeaderConfiguration(title: 'flutter_hooks'),
-            route: '/flutter-hooks-sample',
-          ),
-        );
-
-  @override
-  Widget left(BuildContext context) => const FlutterDeckCodeHighlight(
-        code: r'''
+          route: '/flutter-hooks-sample',
+          sampleCodes: const <Widget>[
+            FlutterDeckCodeHighlight(
+              code: r'''
 final Stream<int> _stream = _streamData();
 final Future<bool> _future = _fetchData();
 
@@ -65,11 +61,11 @@ static Stream<int> _streamData() async* {
     );
   }
 }''',
-        textStyle: TextStyle(fontSize: 16),
-      );
-
-  @override
-  Widget right(BuildContext context) => _RightWidget();
+            ),
+          ],
+          sampleWidget: _RightWidget(),
+          title: 'flutter_hooks',
+        );
 }
 
 class _RightWidget extends HookWidget {
