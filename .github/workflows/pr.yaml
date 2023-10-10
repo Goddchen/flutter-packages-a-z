@@ -8,7 +8,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           cache: true
-          flutter-version: "3.13.0"
+          flutter-version: "3.13.6"
       - run: flutter build web
       - run: cp -r build/web/assets/packages build/web/packages
       - uses: FirebaseExtended/action-hosting-deploy@v0
@@ -20,7 +20,7 @@ jobs:
   flutter_package:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
-      flutter_version: "3.13.0"
+      flutter_version: "3.13.6"
       min_coverage: 0
       runs_on: "ubuntu-22.04"
   semantic_pull_request:
