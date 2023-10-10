@@ -1,25 +1,15 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 
-class BeamerSampleSlide extends FlutterDeckSplitSlide {
-  const BeamerSampleSlide({super.key})
+class BeamerSampleSlide extends SampleSlide {
+  BeamerSampleSlide()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            header: FlutterDeckHeaderConfiguration(title: 'beamer'),
-            route: '/beamer-sample',
-          ),
-        );
-
-  static const String _beamerRoute = '/beamer/beamer';
-  static const String _beamerSubRoute = '/beamer/beamer/sub-page';
-
-  @override
-  Widget left(BuildContext context) => const Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          FlutterDeckCodeHighlight(
-            code: '''
+          route: '/beamer-sample',
+          sampleCodes: const <FlutterDeckCodeHighlight>[
+            FlutterDeckCodeHighlight(
+              code: '''
 BeamerDelegate(
   initialPath: _beamerRoute,
   locationBuilder: RoutesLocationBuilder(
@@ -52,29 +42,28 @@ BeamerDelegate(
     },
   ).call,
 );''',
-            textStyle: TextStyle(fontSize: 18),
-          ),
-          SizedBox(height: 16),
-          FlutterDeckCodeHighlight(
-            code: '''
+            ),
+            FlutterDeckCodeHighlight(
+              code: '''
 MaterialApp.router(
   routeInformationParser: BeamerParser(),
   routerDelegate: _createBeamerDelegate(),
 );''',
-            textStyle: TextStyle(fontSize: 18),
-          ),
-        ],
-      );
+            ),
+          ],
+          sampleWidget: _createApp(),
+          title: 'beamer',
+        );
 
-  @override
-  Widget right(BuildContext context) => _createApp();
+  static const String _beamerRoute = '/beamer/beamer';
+  static const String _beamerSubRoute = '/beamer/beamer/sub-page';
 
-  Widget _createApp() => MaterialApp.router(
+  static Widget _createApp() => MaterialApp.router(
         routeInformationParser: BeamerParser(),
         routerDelegate: _createBeamerDelegate(),
       );
 
-  BeamerDelegate _createBeamerDelegate() => BeamerDelegate(
+  static BeamerDelegate _createBeamerDelegate() => BeamerDelegate(
         initialPath: _beamerRoute,
         locationBuilder: RoutesLocationBuilder(
           routes: <Pattern, Object Function(BuildContext, BeamState, Object?)>{

@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 
 class EquatablePerson extends Equatable {
   final String name;
@@ -15,7 +16,7 @@ class EquatablePerson extends Equatable {
   bool? get stringify => true;
 }
 
-class EquatableSampleSlide extends FlutterDeckSplitSlide {
+class EquatableSampleSlide extends SampleSlide {
   static const EquatablePerson equatablePerson1 =
       EquatablePerson(name: 'Equatable');
   static const EquatablePerson equatablePerson2 =
@@ -27,20 +28,12 @@ class EquatableSampleSlide extends FlutterDeckSplitSlide {
   static Person person1 = Person(name: 'Pure');
   static Person person2 = Person(name: 'Pure');
 
-  const EquatableSampleSlide({super.key})
+  EquatableSampleSlide()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            header: FlutterDeckHeaderConfiguration(title: 'equatable'),
-            route: '/equatable-sample',
-          ),
-        );
-
-  @override
-  Widget left(BuildContext context) => const Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          FlutterDeckCodeHighlight(
-            code: '''
+          route: '/equatable-sample',
+          sampleCodes: const <Widget>[
+            FlutterDeckCodeHighlight(
+              code: '''
 class EquatablePerson extends Equatable {
   final String name;
 
@@ -52,11 +45,9 @@ class EquatablePerson extends Equatable {
   @override
   bool? get stringify => true;
 }''',
-            textStyle: TextStyle(fontSize: 20),
-          ),
-          SizedBox(height: 16),
-          FlutterDeckCodeHighlight(
-            code: '''
+            ),
+            FlutterDeckCodeHighlight(
+              code: '''
 @immutable
 class ImmutablePerson {
   final String name;
@@ -73,48 +64,52 @@ class ImmutablePerson {
           runtimeType == other.runtimeType &&
           name == other.name;
 }''',
-            textStyle: TextStyle(fontSize: 20),
-          ),
-          SizedBox(height: 16),
-          FlutterDeckCodeHighlight(
-            code: '''
+            ),
+            FlutterDeckCodeHighlight(
+              code: '''
 class Person {
   final String name;
 
   Person({required this.name});
 }''',
-            textStyle: TextStyle(fontSize: 20),
-          ),
-        ],
-      );
-
-  @override
-  Widget right(BuildContext context) => DefaultTextStyle(
-        style: const TextStyle(fontSize: 22),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text('person1.toString() -> $person1'),
-            Text('immutablePerson1.toString() -> $immutablePerson1'),
-            Text('equatablePerson1.toString() -> $equatablePerson1'),
-            const SizedBox(height: 16),
-            Text('person1.hashCode -> ${person1.hashCode}'),
-            Text('person2.hashCode -> ${person2.hashCode}'),
-            Text('immutablePerson1.hashCode -> ${immutablePerson1.hashCode}'),
-            Text('immutablePerson2.hashCode -> ${immutablePerson2.hashCode}'),
-            Text('equatablePerson1.hashCode -> ${equatablePerson1.hashCode}'),
-            Text('equatablePerson2.hashCode -> ${equatablePerson2.hashCode}'),
-            const SizedBox(height: 16),
-            Text('person1 == person2 -> ${person1 == person2}'),
-            Text(
-              '''immutablePerson1 == immutablePerson2 -> ${immutablePerson1 == immutablePerson2}''',
-            ),
-            Text(
-              '''equatablePerson1 == equatablePerson1 -> ${equatablePerson1 == equatablePerson1}''',
             ),
           ],
-        ),
-      );
+          sampleWidget: DefaultTextStyle(
+            style: const TextStyle(fontSize: 22),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text('person1.toString() -> $person1'),
+                Text('immutablePerson1.toString() -> $immutablePerson1'),
+                Text('equatablePerson1.toString() -> $equatablePerson1'),
+                const SizedBox(height: 16),
+                Text('person1.hashCode -> ${person1.hashCode}'),
+                Text('person2.hashCode -> ${person2.hashCode}'),
+                Text(
+                  'immutablePerson1.hashCode -> ${immutablePerson1.hashCode}',
+                ),
+                Text(
+                  'immutablePerson2.hashCode -> ${immutablePerson2.hashCode}',
+                ),
+                Text(
+                  'equatablePerson1.hashCode -> ${equatablePerson1.hashCode}',
+                ),
+                Text(
+                  'equatablePerson2.hashCode -> ${equatablePerson2.hashCode}',
+                ),
+                const SizedBox(height: 16),
+                Text('person1 == person2 -> ${person1 == person2}'),
+                Text(
+                  '''immutablePerson1 == immutablePerson2 -> ${immutablePerson1 == immutablePerson2}''',
+                ),
+                Text(
+                  '''equatablePerson1 == equatablePerson1 -> ${equatablePerson1 == equatablePerson1}''',
+                ),
+              ],
+            ),
+          ),
+          title: 'equatable',
+        );
 }
 
 @immutable

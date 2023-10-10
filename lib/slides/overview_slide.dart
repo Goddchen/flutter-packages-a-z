@@ -5,15 +5,15 @@ import 'package:flutter_packages_a_z/widgets/bullet_point.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
 import 'package:fpdart/fpdart.dart';
 
-class OverviewSlide extends FlutterDeckSplitSlide {
-  final Iterable<BulletPoint> bulletPoints;
+class OverviewSlide extends FlutterDeckSlideWidget {
+  final Iterable<String> bulletPoints;
   final String packageAuthor;
   final String packageDescription;
   final int packageLikes;
   final String packageName;
   final Set<SupportedPlatform> packageSupportedPlatforms;
   final String packageVersion;
-  final Iterable<FlutterDeckCodeHighlight> samples;
+  final Iterable<Widget> samples;
 
   OverviewSlide({
     required this.bulletPoints,
@@ -26,7 +26,6 @@ class OverviewSlide extends FlutterDeckSplitSlide {
     required String route,
     required this.samples,
     required String title,
-    super.key,
   }) : super(
           configuration: FlutterDeckSlideConfiguration(
             header: FlutterDeckHeaderConfiguration(title: title),
@@ -36,58 +35,62 @@ class OverviewSlide extends FlutterDeckSplitSlide {
         );
 
   @override
-  Widget left(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          PackageBadge(
-            author: packageAuthor,
-            likes: packageLikes,
-            name: packageName,
-            supportedPlatforms: packageSupportedPlatforms,
-            version: packageVersion,
-          ),
-          const SizedBox(height: 32),
-          Text(
-            packageDescription,
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ],
-      );
-
-  @override
-  Widget right(BuildContext context) => FlutterDeckSlideStepsBuilder(
-        builder: (BuildContext context, int stepNumber) => Column(
+  FlutterDeckSlide build(BuildContext context) => FlutterDeckSlide.split(
+        leftBuilder: (BuildContext context) => Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            ...bulletPoints.mapWithIndex(
-              (BulletPoint bulletPoint, int index) => AnimatedOpacity(
-                opacity: stepNumber >= index + 2 ? 1 : 0,
-                duration: stepAnimationDuration,
-                child: bulletPoint,
-              ),
+            PackageBadge(
+              author: packageAuthor,
+              likes: packageLikes,
+              name: packageName,
+              supportedPlatforms: packageSupportedPlatforms,
+              version: packageVersion,
             ),
             const SizedBox(height: 32),
-            AnimatedOpacity(
-              opacity: stepNumber >= bulletPoints.length + 2 ? 1 : 0,
-              duration: stepAnimationDuration,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  FlutterDeckCodeHighlight(
-                    code: '\$ flutter pub add $packageName',
-                    textStyle: const TextStyle(fontSize: 24),
-                  ),
-                  const SizedBox(height: 16),
-                  ...samples.expand(
-                    (FlutterDeckCodeHighlight element) => <Widget>[
-                      element,
-                      const SizedBox(height: 16),
-                    ],
-                  )..dropRight(),
-                ],
-              ),
+            Text(
+              packageDescription,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
+        ),
+        rightBuilder: (BuildContext context) => FlutterDeckSlideStepsBuilder(
+          builder: (BuildContext context, int stepNumber) => Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ...bulletPoints.mapWithIndex(
+                (String bulletPoint, int index) => AnimatedOpacity(
+                  opacity: stepNumber >= index + 2 ? 1 : 0,
+                  duration: stepAnimationDuration,
+                  child: BulletPoint(text: bulletPoint),
+                ),
+              ),
+              const SizedBox(height: 32),
+              AnimatedOpacity(
+                opacity: stepNumber >= bulletPoints.length + 2 ? 1 : 0,
+                duration: stepAnimationDuration,
+                child: FlutterDeckCodeHighlightTheme(
+                  data: const FlutterDeckCodeHighlightThemeData(
+                    textStyle: TextStyle(fontSize: 24),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      FlutterDeckCodeHighlight(
+                        code: '\$ flutter pub add $packageName',
+                      ),
+                      const SizedBox(height: 16),
+                      ...samples.expand(
+                        (Widget element) => <Widget>[
+                          element,
+                          const SizedBox(height: 16),
+                        ],
+                      )..dropRight(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       );
 }
