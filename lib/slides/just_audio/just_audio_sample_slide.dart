@@ -3,20 +3,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/gen/assets.gen.dart';
+import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 import 'package:just_audio/just_audio.dart';
 
-class JustAudioSampleSlide extends FlutterDeckSplitSlide {
-  const JustAudioSampleSlide({super.key})
+class JustAudioSampleSlide extends SampleSlide {
+  JustAudioSampleSlide()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            header: FlutterDeckHeaderConfiguration(title: 'just_audio'),
-            route: '/just-audio-sample',
-          ),
-        );
-
-  @override
-  Widget left(BuildContext context) => const FlutterDeckCodeHighlight(
-        code: '''
+          route: '/just-audio-sample',
+          sampleCodes: const <Widget>[
+            FlutterDeckCodeHighlight(
+              code: '''
 class _JustAudioSampleSlide extends StatefulWidget {
   const _JustAudioSampleSlide();
 
@@ -54,11 +50,11 @@ class __JustAudioSampleSlideState extends State<_JustAudioSampleSlide> {
     _playingSubscription.cancel();
   }
 }''',
-        textStyle: TextStyle(fontSize: 20),
-      );
-
-  @override
-  Widget right(BuildContext context) => const _JustAudioSampleSlide();
+            ),
+          ],
+          sampleWidget: const _JustAudioSampleSlide(),
+          title: 'just_audio',
+        );
 }
 
 class _JustAudioSampleSlide extends StatefulWidget {
