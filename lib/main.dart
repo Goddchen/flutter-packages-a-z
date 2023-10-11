@@ -30,6 +30,7 @@ import 'package:flutter_packages_a_z/slides/mason/mason_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/mason/mason_slide.dart';
 import 'package:flutter_packages_a_z/slides/qr_flutter/qr_flutter_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/qr_flutter/qr_flutter_slide.dart';
+import 'package:flutter_packages_a_z/slides/questions/questions_slide.dart';
 import 'package:flutter_packages_a_z/slides/share_plus/share_plus_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/share_plus/share_plus_slide.dart';
 import 'package:flutter_packages_a_z/slides/title/title_slide.dart';
@@ -97,6 +98,7 @@ void main() {
         YoutubePlayerIframeSampleSlide(),
         FlutterZoomDrawerSlide(),
         FlutterZoomDrawerSampleSlide(),
+        const QuestionsSlide(),
       ],
     ),
   );
