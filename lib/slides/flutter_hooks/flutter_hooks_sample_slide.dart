@@ -44,10 +44,12 @@ class FlutterHooksSampleSlide extends SampleSlide {
                     ErrorWidget(streamSnapshot.error!)
                   else if (streamSnapshot.hasData)
                     Text('Last stream value: ${streamSnapshot.data}')
-                  else
+                  else if (streamSnapshot.connectionState == ConnectionState.waiting)
                     CircularProgressIndicator(
                       color: Theme.of(context).colorScheme.onPrimary,
-                    ),
+                    )
+                  else
+                    Text('Stream state is ${streamSnapshot.connectionState}'),
                 ],
               );
             }
@@ -74,7 +76,7 @@ class FlutterHooksSampleSlide extends SampleSlide {
 }
 
 class _RightWidget extends HookWidget {
-  final Stream<int> _stream = _streamData();
+  final Stream<int> _stream = _streamData().asBroadcastStream();
   final Future<bool> _future = _fetchData();
 
   @override
@@ -103,10 +105,12 @@ class _RightWidget extends HookWidget {
           ErrorWidget(streamSnapshot.error!)
         else if (streamSnapshot.hasData)
           Text('Last stream value: ${streamSnapshot.data}')
-        else
+        else if (streamSnapshot.connectionState == ConnectionState.waiting)
           CircularProgressIndicator(
             color: Theme.of(context).colorScheme.onPrimary,
-          ),
+          )
+        else
+          Text('Stream state is ${streamSnapshot.connectionState}'),
       ],
     );
   }
