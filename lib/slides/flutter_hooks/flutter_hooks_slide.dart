@@ -10,6 +10,7 @@ class FlutterHooksSlide extends OverviewSlide {
             'Easily auto-dispose disposable objects',
             'Hooks available for most commonly used things',
             'Automatically rebuilds widget when needed',
+            'Extends StatelessWidget',
           ],
           packageAuthor: 'dash-overflow.net',
           packageDescription:
