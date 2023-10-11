@@ -13,11 +13,14 @@ class Assets {
   Assets._();
 
   static const AssetGenImage avatar = AssetGenImage('assets/avatar.jpeg');
+  static const AssetGenImage dashQuestions =
+      AssetGenImage('assets/dash-questions.png');
   static const String justAudioSample = 'assets/just-audio-sample.mp3';
   static const String lottieSample = 'assets/lottie-sample.json';
 
   /// List of all assets
-  List<dynamic> get values => [avatar, justAudioSample, lottieSample];
+  List<dynamic> get values =>
+      [avatar, dashQuestions, justAudioSample, lottieSample];
 }
 
 class AssetGenImage {
