@@ -28,8 +28,12 @@ class FlutterZoomDrawerSlide extends OverviewSlide {
               code: r'$ flutter pub add flutter_zoom_drawer',
               language: 'bash',
             ),
-            FlutterDeckCodeHighlight(
-              code: '''
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: '''
 ZoomDrawer(
   controller: ZoomDrawerController,
   style: DrawerStyle.defaultStyle,
@@ -43,6 +47,7 @@ ZoomDrawer(
   openCurve: Curves.fastOutSlowIn,
   closeCurve: Curves.bounceIn,
 );''',
+              ),
             ),
             FlutterDeckCodeHighlight(
               code: '''

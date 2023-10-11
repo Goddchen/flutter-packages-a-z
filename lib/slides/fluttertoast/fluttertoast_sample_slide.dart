@@ -8,8 +8,12 @@ class FlutterToastSampleSlide extends SampleSlide {
       : super(
           route: '/flutter-toast-sample',
           sampleCodes: const <Widget>[
-            FlutterDeckCodeHighlight(
-              code: '''
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 16),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: '''
 FToast().init(context);
 return Column(
   mainAxisSize: MainAxisSize.min,
@@ -51,6 +55,7 @@ return Column(
     const SizedBox(height: 16),
   ],
 );''',
+              ),
             ),
           ],
           sampleWidget: Builder(

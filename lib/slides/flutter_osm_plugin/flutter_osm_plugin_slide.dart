@@ -25,9 +25,13 @@ class FlutterOsmPluginSlide extends OverviewSlide {
           },
           packageVersion: '0.60.5',
           route: '/flutter-osm-plugin',
-          samples: <Widget>[
-            const FlutterDeckCodeHighlight(
-              code: '''
+          samples: const <Widget>[
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 8),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: '''
 OSMFlutter( 
   controller:mapController,
   osmOption: OSMOption(
@@ -70,6 +74,7 @@ OSMFlutter(
       ),
   )
 );''',
+              ),
             ),
           ],
           title: 'flutter_osm_plugin',

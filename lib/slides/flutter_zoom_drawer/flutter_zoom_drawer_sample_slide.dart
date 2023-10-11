@@ -8,8 +8,12 @@ class FlutterZoomDrawerSampleSlide extends SampleSlide {
       : super(
           route: '/flutter-zoom-drawer-sample',
           sampleCodes: const <Widget>[
-            FlutterDeckCodeHighlight(
-              code: r'''
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'''
 final ZoomDrawerController zoomDrawerController = ZoomDrawerController();
 return ClipRRect(
   child: Scaffold(
@@ -50,6 +54,7 @@ return ClipRRect(
     ),
   ),
 );''',
+              ),
             ),
           ],
           sampleWidget: Builder(

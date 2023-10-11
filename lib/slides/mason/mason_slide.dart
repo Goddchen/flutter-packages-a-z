@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/overview_slide.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
@@ -28,34 +29,69 @@ package:mason contains the core generator that powers package:mason_cli and can 
           },
           packageVersion: '0.1.0-dev.51',
           route: '/mason',
-          samples: const <FlutterDeckCodeHighlight>[
-            FlutterDeckCodeHighlight(
-              code: r'$ dart pub global activate mason_cli',
-              language: 'bash',
+          samples: const <Widget>[
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'$ dart pub global activate mason_cli',
+                language: 'bash',
+              ),
             ),
-            FlutterDeckCodeHighlight(
-              code: r'$ mason init',
-              language: 'bash',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'$ mason init',
+                language: 'bash',
+              ),
             ),
-            FlutterDeckCodeHighlight(
-              code: r'$ mason add hello',
-              language: 'bash',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'$ mason add hello',
+                language: 'bash',
+              ),
             ),
-            FlutterDeckCodeHighlight(
-              code: r'$ mason make hello',
-              language: 'bash',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'$ mason make hello',
+                language: 'bash',
+              ),
             ),
-            FlutterDeckCodeHighlight(
-              code: r'$ mason search bloc',
-              language: 'bash',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'$ mason search bloc',
+                language: 'bash',
+              ),
             ),
-            FlutterDeckCodeHighlight(
-              code: r'$ mason list',
-              language: 'bash',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'$ mason list',
+                language: 'bash',
+              ),
             ),
-            FlutterDeckCodeHighlight(
-              code: r'$ mason upgrade',
-              language: 'bash',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'$ mason upgrade',
+                language: 'bash',
+              ),
             ),
           ],
           title: 'mason',

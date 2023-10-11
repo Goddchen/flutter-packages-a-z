@@ -32,20 +32,25 @@ class GoRouterSlide extends OverviewSlide {
               code: r'$ flutter pub add go_router',
               language: 'bash',
             ),
-            FlutterDeckCodeHighlight(
-              code: '''
-final _router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => HomeScreen(),
-    ),
-  ],
-);
-
-MaterialApp.router(
-  routerConfig: _router,
-);''',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: '''
+            final _router = GoRouter(
+              routes: [
+                GoRoute(
+                  path: '/',
+                  builder: (context, state) => HomeScreen(),
+                ),
+              ],
+            );
+            
+            MaterialApp.router(
+              routerConfig: _router,
+            );''',
+              ),
             ),
             FlutterDeckCodeHighlight(
               code: '''context.go('/profile');''',

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/overview_slide.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
@@ -25,21 +26,26 @@ class BeamerSlide extends OverviewSlide {
           },
           packageVersion: '1.5.6',
           route: '/beamer',
-          samples: const <FlutterDeckCodeHighlight>[
+          samples: const <Widget>[
             FlutterDeckCodeHighlight(
               code: r'$ flutter pub add beamer',
               language: 'bash',
             ),
-            FlutterDeckCodeHighlight(
-              code: '''
-final routerDelegate = BeamerDelegate(
-  locationBuilder: RoutesLocationBuilder(
-    routes: {
-      '/': (context, state, data) => HomeScreen(),
-      // ...
-    },
-  ),
-);''',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: '''
+            final routerDelegate = BeamerDelegate(
+              locationBuilder: RoutesLocationBuilder(
+                routes: {
+                  '/': (context, state, data) => HomeScreen(),
+                  // ...
+                },
+              ),
+            );''',
+              ),
             ),
             FlutterDeckCodeHighlight(
               code: '''

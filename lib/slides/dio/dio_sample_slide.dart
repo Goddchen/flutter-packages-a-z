@@ -8,7 +8,10 @@ class DioSampleSlide extends SampleSlide {
       : super(
           route: '/dio-sample',
           sampleCodes: const <Widget>[
-            SingleChildScrollView(
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 16),
+              ),
               child: FlutterDeckCodeHighlight(
                 code: r'''
 Future<Response<Object>>? future;
