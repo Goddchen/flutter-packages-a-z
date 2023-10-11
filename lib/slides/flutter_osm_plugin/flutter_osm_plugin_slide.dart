@@ -1,20 +1,18 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/overview_slide.dart';
-import 'package:flutter_packages_a_z/widgets/bullet_point.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
 
 class FlutterOsmPluginSlide extends OverviewSlide {
-  FlutterOsmPluginSlide({super.key})
+  FlutterOsmPluginSlide()
       : super(
-          bulletPoints: <BulletPoint>[
-            const BulletPoint(
-              text: 'OpenStreetMap plugin for iOS, Android and web',
-            ),
-            const BulletPoint(text: 'Extensive marker features'),
-            const BulletPoint(text: 'Custom layers'),
-            const BulletPoint(text: 'Draw navigation routes'),
-            const BulletPoint(text: 'Address suggestion'),
-            const BulletPoint(text: 'Display as location picker'),
+          bulletPoints: const <String>[
+            'OpenStreetMap plugin for iOS, Android and web',
+            'Extensive marker features',
+            'Custom layers',
+            'Draw navigation routes',
+            'Address suggestion',
+            'Display as location picker',
           ],
           packageAuthor: 'unverified uploader',
           packageDescription: 'OpenStreetMap plugin',
@@ -27,9 +25,13 @@ class FlutterOsmPluginSlide extends OverviewSlide {
           },
           packageVersion: '0.60.5',
           route: '/flutter-osm-plugin',
-          samples: <FlutterDeckCodeHighlight>[
-            const FlutterDeckCodeHighlight(
-              code: '''
+          samples: const <Widget>[
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 8),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: '''
 OSMFlutter( 
   controller:mapController,
   osmOption: OSMOption(
@@ -72,6 +74,7 @@ OSMFlutter(
       ),
   )
 );''',
+              ),
             ),
           ],
           title: 'flutter_osm_plugin',

@@ -10,11 +10,12 @@ class XmlSampleSlide extends SampleSlide {
   <person age="38" name="Goddchen" />
 </root>''';
 
-  XmlSampleSlide({super.key})
+  XmlSampleSlide()
       : super(
           route: '/xml-sample',
-          title: 'xml',
-          sampleCode: r'''
+          sampleCodes: const <Widget>[
+            FlutterDeckCodeHighlight(
+              code: r'''
 Column(
   mainAxisSize: MainAxisSize.min,
   children: <Widget>[
@@ -38,6 +39,8 @@ Column(
     ),
   ],
 );''',
+            ),
+          ],
           sampleWidget: Builder(
             builder: (BuildContext context) => Column(
               mainAxisSize: MainAxisSize.min,
@@ -65,5 +68,6 @@ Column(
               ],
             ),
           ),
+          title: 'xml',
         );
 }

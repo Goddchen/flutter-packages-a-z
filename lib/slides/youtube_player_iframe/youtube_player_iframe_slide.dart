@@ -1,84 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:flutter_packages_a_z/constants.dart';
-import 'package:flutter_packages_a_z/widgets/bullet_point.dart';
+import 'package:flutter_packages_a_z/slides/overview_slide.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
 
-class YoutubePlayerIframeSlide extends FlutterDeckSplitSlide {
-  const YoutubePlayerIframeSlide({super.key})
+class YoutubePlayerIframeSlide extends OverviewSlide {
+  YoutubePlayerIframeSlide()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            header:
-                FlutterDeckHeaderConfiguration(title: 'youtube_player_iframe'),
-            route: '/youtube-player-iframe',
-            steps: 6,
-          ),
-        );
-  @override
-  Widget left(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          const PackageBadge(
-            author: 'sarbagyastha.com.np',
-            likes: 450,
-            name: 'youtube_player_iframe',
-            supportedPlatforms: <SupportedPlatform>{
-              SupportedPlatform.android,
-              SupportedPlatform.ios,
-              SupportedPlatform.web,
-            },
-            version: '4.0.4',
-          ),
-          const SizedBox(height: 32),
-          Text(
-            '''Flutter plugin for playing or streaming YouTube videos inline using the official iFrame Player API. The package exposes almost all the API provided by iFrame Player API. So, it's 100% customizable.''',
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ],
-      );
-
-  @override
-  Widget right(BuildContext context) => FlutterDeckSlideStepsBuilder(
-        builder: (_, int stepNumber) => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            AnimatedOpacity(
-              opacity: stepNumber >= 2 ? 1 : 0,
-              duration: stepAnimationDuration,
-              child: const BulletPoint(text: 'Compatible with web'),
+          bulletPoints: const <String>[
+            'Compatible with web',
+            'No need for an API key',
+            'Supports custom controls',
+            'Uses webview_flutter under the hood',
+          ],
+          packageAuthor: 'sarbagyastha.com.np',
+          packageDescription:
+              '''Flutter plugin for playing or streaming YouTube videos inline using the official iFrame Player API. The package exposes almost all the API provided by iFrame Player API. So, it's 100% customizable.''',
+          packageLikes: 450,
+          packageName: 'youtube_player_iframe',
+          packageSupportedPlatforms: <SupportedPlatform>{
+            SupportedPlatform.android,
+            SupportedPlatform.ios,
+            SupportedPlatform.web,
+          },
+          packageVersion: '4.0.4',
+          route: '/youtube-player-iframe',
+          samples: const <Widget>[
+            FlutterDeckCodeHighlight(
+              code: r'$ flutter pub add youtube_player_iframe',
+              language: 'bash',
             ),
-            AnimatedOpacity(
-              opacity: stepNumber >= 3 ? 1 : 0,
-              duration: stepAnimationDuration,
-              child: const BulletPoint(text: 'No need for an API key'),
-            ),
-            AnimatedOpacity(
-              opacity: stepNumber >= 4 ? 1 : 0,
-              duration: stepAnimationDuration,
-              child: const BulletPoint(text: 'Supports custom controls'),
-            ),
-            AnimatedOpacity(
-              opacity: stepNumber >= 5 ? 1 : 0,
-              duration: stepAnimationDuration,
-              child: const BulletPoint(
-                text: 'Uses webview_flutter under the hood',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 18),
               ),
-            ),
-            const SizedBox(height: 32),
-            AnimatedOpacity(
-              opacity: stepNumber >= 6 ? 1 : 0,
-              duration: stepAnimationDuration,
-              child: const Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  FlutterDeckCodeHighlight(
-                    code: r'$ flutter pub add youtube_player_iframe',
-                    language: 'bash',
-                    textStyle: TextStyle(fontSize: 20),
-                  ),
-                  SizedBox(height: 16),
-                  FlutterDeckCodeHighlight(
-                    code: '''
+              child: FlutterDeckCodeHighlight(
+                code: '''
 final _controller = YoutubePlayerController(
   params: YoutubePlayerParams(
     mute: false,
@@ -98,12 +54,9 @@ final _controller = YoutubePlayerController.fromVideoId(
   autoPlay: false,
   params: const YoutubePlayerParams(showFullscreenButton: true),
 );''',
-                    textStyle: TextStyle(fontSize: 20),
-                  ),
-                ],
               ),
             ),
           ],
-        ),
-      );
+          title: 'youtube_player_iframe',
+        );
 }

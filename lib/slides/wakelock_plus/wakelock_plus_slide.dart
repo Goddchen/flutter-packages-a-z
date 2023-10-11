@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/overview_slide.dart';
-import 'package:flutter_packages_a_z/widgets/bullet_point.dart';
 import 'package:flutter_packages_a_z/widgets/package_badge.dart';
 
 class WakelockPlusSlide extends OverviewSlide {
-  WakelockPlusSlide({super.key})
+  WakelockPlusSlide()
       : super(
-          bulletPoints: <BulletPoint>[
-            const BulletPoint(text: 'Keep the screen on'),
-            const BulletPoint(text: 'No permissions required'),
-            const BulletPoint(
-              text: 'Uses screen wakelock, not CPU/partial wakelock',
-            ),
+          bulletPoints: <String>[
+            'Keep the screen on',
+            'No permissions required',
+            'Uses screen wakelock, not CPU/partial wakelock',
           ],
           packageAuthor: 'fluttercommunity.dev',
           packageDescription:
@@ -29,24 +26,20 @@ class WakelockPlusSlide extends OverviewSlide {
           },
           packageVersion: '1.1.1',
           route: '/wakelock-plus',
-          samples: const <FlutterDeckCodeHighlight>[
+          samples: const <Widget>[
             FlutterDeckCodeHighlight(
               code: '''WakelockPlus.enable();''',
-              textStyle: TextStyle(fontSize: 24),
             ),
             FlutterDeckCodeHighlight(
               code: '''WakelockPlus.disable();''',
-              textStyle: TextStyle(fontSize: 24),
             ),
             FlutterDeckCodeHighlight(
               code: '''
 WakelockPlus.toggle(enable: true);
 WakelockPlus.toggle(enable: false);''',
-              textStyle: TextStyle(fontSize: 24),
             ),
             FlutterDeckCodeHighlight(
               code: '''bool wakelockEnabled = await WakelockPlus.enabled;''',
-              textStyle: TextStyle(fontSize: 24),
             ),
           ],
           title: 'wakelock_plus',

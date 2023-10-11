@@ -3,18 +3,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:fpdart/fpdart.dart';
 
-class SampleSlide extends FlutterDeckSplitSlide {
-  final String sampleCode;
-  final Option<TextStyle> sampleCodeTextStyle;
+class SampleSlide extends FlutterDeckSlideWidget {
+  final Iterable<Widget> sampleCodes;
   final Widget sampleWidget;
 
   SampleSlide({
     required String route,
-    required this.sampleCode,
+    required this.sampleCodes,
     required this.sampleWidget,
     required String title,
-    super.key,
-    this.sampleCodeTextStyle = const None(),
   }) : super(
           configuration: FlutterDeckSlideConfiguration(
             header: FlutterDeckHeaderConfiguration(title: title),
@@ -23,13 +20,24 @@ class SampleSlide extends FlutterDeckSplitSlide {
         );
 
   @override
-  Widget left(BuildContext context) => FlutterDeckCodeHighlight(
-        code: sampleCode,
-        textStyle: sampleCodeTextStyle.getOrElse(
-          () => const TextStyle(fontSize: 20),
+  FlutterDeckSlide build(BuildContext context) => FlutterDeckSlide.split(
+        leftBuilder: (BuildContext context) => FlutterDeckCodeHighlightTheme(
+          data: const FlutterDeckCodeHighlightThemeData(
+            textStyle: TextStyle(fontSize: 20),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: sampleCodes
+                .expand(
+                  (Widget element) => <Widget>[
+                    element,
+                    const SizedBox(height: 16),
+                  ],
+                )
+                .dropRight()
+                .toList(),
+          ),
         ),
+        rightBuilder: (BuildContext context) => sampleWidget,
       );
-
-  @override
-  Widget right(BuildContext context) => sampleWidget;
 }
