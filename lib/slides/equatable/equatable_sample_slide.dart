@@ -5,9 +5,8 @@ import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 
 class EquatablePerson extends Equatable {
-  final String name;
-
   const EquatablePerson({required this.name});
+  final String name;
 
   @override
   List<Object?> get props => <Object>[name];
@@ -17,17 +16,6 @@ class EquatablePerson extends Equatable {
 }
 
 class EquatableSampleSlide extends SampleSlide {
-  static const EquatablePerson equatablePerson1 =
-      EquatablePerson(name: 'Equatable');
-  static const EquatablePerson equatablePerson2 =
-      EquatablePerson(name: 'Equatable');
-  static const ImmutablePerson immutablePerson1 =
-      ImmutablePerson(name: 'Immutable');
-  static const ImmutablePerson immutablePerson2 =
-      ImmutablePerson(name: 'Immutable');
-  static Person person1 = Person(name: 'Pure');
-  static Person person2 = Person(name: 'Pure');
-
   EquatableSampleSlide()
       : super(
           route: '/equatable-sample',
@@ -110,13 +98,22 @@ class Person {
           ),
           title: 'equatable',
         );
+  static const EquatablePerson equatablePerson1 =
+      EquatablePerson(name: 'Equatable');
+  static const EquatablePerson equatablePerson2 =
+      EquatablePerson(name: 'Equatable');
+  static const ImmutablePerson immutablePerson1 =
+      ImmutablePerson(name: 'Immutable');
+  static const ImmutablePerson immutablePerson2 =
+      ImmutablePerson(name: 'Immutable');
+  static Person person1 = Person(name: 'Pure');
+  static Person person2 = Person(name: 'Pure');
 }
 
 @immutable
 class ImmutablePerson {
-  final String name;
-
   const ImmutablePerson({required this.name});
+  final String name;
 
   @override
   int get hashCode => name.hashCode;
@@ -130,7 +127,6 @@ class ImmutablePerson {
 }
 
 class Person {
-  final String name;
-
   Person({required this.name});
+  final String name;
 }

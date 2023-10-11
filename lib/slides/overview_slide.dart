@@ -6,15 +6,6 @@ import 'package:flutter_packages_a_z/widgets/package_badge.dart';
 import 'package:fpdart/fpdart.dart';
 
 class OverviewSlide extends FlutterDeckSlideWidget {
-  final Iterable<String> bulletPoints;
-  final String packageAuthor;
-  final String packageDescription;
-  final int packageLikes;
-  final String packageName;
-  final Set<SupportedPlatform> packageSupportedPlatforms;
-  final String packageVersion;
-  final Iterable<Widget> samples;
-
   OverviewSlide({
     required this.bulletPoints,
     required this.packageAuthor,
@@ -33,6 +24,14 @@ class OverviewSlide extends FlutterDeckSlideWidget {
             steps: bulletPoints.length + 2,
           ),
         );
+  final Iterable<String> bulletPoints;
+  final String packageAuthor;
+  final String packageDescription;
+  final int packageLikes;
+  final String packageName;
+  final Set<SupportedPlatform> packageSupportedPlatforms;
+  final String packageVersion;
+  final Iterable<Widget> samples;
 
   @override
   FlutterDeckSlide build(BuildContext context) => FlutterDeckSlide.split(

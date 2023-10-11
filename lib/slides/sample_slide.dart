@@ -4,9 +4,6 @@ import 'package:flutter_deck/flutter_deck.dart';
 import 'package:fpdart/fpdart.dart';
 
 class SampleSlide extends FlutterDeckSlideWidget {
-  final Iterable<Widget> sampleCodes;
-  final Widget sampleWidget;
-
   SampleSlide({
     required String route,
     required this.sampleCodes,
@@ -18,6 +15,8 @@ class SampleSlide extends FlutterDeckSlideWidget {
             route: route,
           ),
         );
+  final Iterable<Widget> sampleCodes;
+  final Widget sampleWidget;
 
   @override
   FlutterDeckSlide build(BuildContext context) => FlutterDeckSlide.split(

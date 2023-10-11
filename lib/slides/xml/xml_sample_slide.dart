@@ -5,11 +5,6 @@ import 'package:xml/xml.dart';
 import 'package:xml/xpath.dart';
 
 class XmlSampleSlide extends SampleSlide {
-  static const String _xmlString = '''
-<root>
-  <person age="38" name="Goddchen" />
-</root>''';
-
   XmlSampleSlide()
       : super(
           route: '/xml-sample',
@@ -70,4 +65,8 @@ Column(
           ),
           title: 'xml',
         );
+  static const String _xmlString = '''
+<root>
+  <person age="38" name="Goddchen" />
+</root>''';
 }
