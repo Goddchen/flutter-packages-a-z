@@ -31,6 +31,8 @@ import 'package:flutter_packages_a_z/slides/mason/mason_slide.dart';
 import 'package:flutter_packages_a_z/slides/qr_flutter/qr_flutter_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/qr_flutter/qr_flutter_slide.dart';
 import 'package:flutter_packages_a_z/slides/questions/questions_slide.dart';
+import 'package:flutter_packages_a_z/slides/riverpod/riverpod_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/riverpod/riverpod_slide.dart';
 import 'package:flutter_packages_a_z/slides/share_plus/share_plus_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/share_plus/share_plus_slide.dart';
 import 'package:flutter_packages_a_z/slides/title/title_slide.dart';
@@ -44,62 +46,67 @@ import 'package:flutter_packages_a_z/slides/xml/xml_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/xml/xml_slide.dart';
 import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player_iframe_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player_iframe_slide.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
 
 void main() {
   GetIt.I.registerSingleton(NavigationService());
   runApp(
-    FlutterDeckApp(
-      speakerInfo: FlutterDeckSpeakerInfo(
-        name: 'Martin "Goddchen" Liersch',
-        description: 'Flutter developer from Germany',
-        socialHandle: '@Goddchen',
-        imagePath: Assets.avatar.path,
+    ProviderScope(
+      child: FlutterDeckApp(
+        speakerInfo: FlutterDeckSpeakerInfo(
+          name: 'Martin "Goddchen" Liersch',
+          description: 'Flutter developer from Germany',
+          socialHandle: '@Goddchen',
+          imagePath: Assets.avatar.path,
+        ),
+        slides: <FlutterDeckSlideWidget>[
+          const TitleSlide(),
+          AusteritySlide(),
+          BeamerSlide(),
+          BeamerSampleSlide(),
+          CachedNetworkImageSlide(),
+          CachedNetworkImageSampleSlide(),
+          DioSlide(),
+          DioSampleSlide(),
+          EquatableSlide(),
+          EquatableSampleSlide(),
+          FpDartSlide(),
+          GoRouterSlide(),
+          GoRouterSampleSlide(),
+          FlutterHooksSlide(),
+          FlutterHooksSampleSlide(),
+          JustAudioSlide(),
+          JustAudioSampleSlide(),
+          LottieSlide(),
+          LottieSampleSlide(),
+          MasonSlide(),
+          MasonSampleSlide(),
+          FlutterOsmPluginSlide(),
+          FlutterOsmPluginSampleSlide(),
+          QrFlutterSlide(),
+          QrFlutterSampleSlide(),
+          RiverpodSlide(),
+          RiverpodSampleSlide(),
+          SharePlusSlide(),
+          SharePlusSampleSlide(),
+          FlutterToastSlide(),
+          FlutterToastSampleSlide(),
+          UrlLauncherSlide(),
+          UrlLauncherSampleSlide(),
+          VideoPlayerSlide(),
+          VideoPlayerSampleSlide(),
+          WakelockPlusSlide(),
+          WakelockPlusSampleSlide(),
+          XmlSlide(),
+          XmlSampleSlide(),
+          YoutubePlayerIframeSlide(),
+          YoutubePlayerIframeSampleSlide(),
+          FlutterZoomDrawerSlide(),
+          FlutterZoomDrawerSampleSlide(),
+          const QuestionsSlide(),
+        ],
       ),
-      slides: <FlutterDeckSlideWidget>[
-        const TitleSlide(),
-        AusteritySlide(),
-        BeamerSlide(),
-        BeamerSampleSlide(),
-        CachedNetworkImageSlide(),
-        CachedNetworkImageSampleSlide(),
-        DioSlide(),
-        DioSampleSlide(),
-        EquatableSlide(),
-        EquatableSampleSlide(),
-        FpDartSlide(),
-        GoRouterSlide(),
-        GoRouterSampleSlide(),
-        FlutterHooksSlide(),
-        FlutterHooksSampleSlide(),
-        JustAudioSlide(),
-        JustAudioSampleSlide(),
-        LottieSlide(),
-        LottieSampleSlide(),
-        MasonSlide(),
-        MasonSampleSlide(),
-        FlutterOsmPluginSlide(),
-        FlutterOsmPluginSampleSlide(),
-        QrFlutterSlide(),
-        QrFlutterSampleSlide(),
-        SharePlusSlide(),
-        SharePlusSampleSlide(),
-        FlutterToastSlide(),
-        FlutterToastSampleSlide(),
-        UrlLauncherSlide(),
-        UrlLauncherSampleSlide(),
-        VideoPlayerSlide(),
-        VideoPlayerSampleSlide(),
-        WakelockPlusSlide(),
-        WakelockPlusSampleSlide(),
-        XmlSlide(),
-        XmlSampleSlide(),
-        YoutubePlayerIframeSlide(),
-        YoutubePlayerIframeSampleSlide(),
-        FlutterZoomDrawerSlide(),
-        FlutterZoomDrawerSampleSlide(),
-        const QuestionsSlide(),
-      ],
     ),
   );
 }
