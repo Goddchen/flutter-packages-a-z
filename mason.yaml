@@ -2,3 +2,5 @@ bricks:
   hello: ^0.1.0+1
   test:
     path: "lib\\slides\\mason\\test"
+  slides:
+    path: "bricks\\slides"
