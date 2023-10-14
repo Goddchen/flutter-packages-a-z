@@ -27,10 +27,6 @@ class AusteritySlide extends OverviewSlide {
           route: '/austerity',
           samples: const <FlutterDeckCodeHighlight>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add austerity',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: 'include: package:austerity/analysis_options.yaml',
               fileName: 'analysis_options.yaml',
               language: 'yaml',

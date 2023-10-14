@@ -28,10 +28,6 @@ class EquatableSlide extends OverviewSlide {
           route: '/equatable',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add equatable',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 class Person extends Equatable {
   const Person(this.name);

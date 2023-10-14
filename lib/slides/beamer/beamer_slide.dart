@@ -27,10 +27,6 @@ class BeamerSlide extends OverviewSlide {
           packageVersion: '1.5.6',
           route: '/beamer',
           samples: const <Widget>[
-            FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add beamer',
-              language: 'bash',
-            ),
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
                 textStyle: TextStyle(fontSize: 18),

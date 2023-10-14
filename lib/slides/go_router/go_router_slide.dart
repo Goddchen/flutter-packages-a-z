@@ -28,10 +28,6 @@ class GoRouterSlide extends OverviewSlide {
           packageVersion: '10.1.2',
           route: '/go-router',
           samples: const <Widget>[
-            FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add go_router',
-              language: 'bash',
-            ),
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
                 textStyle: TextStyle(fontSize: 18),

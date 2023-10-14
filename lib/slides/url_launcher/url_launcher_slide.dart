@@ -27,10 +27,6 @@ class UrlLauncherSlide extends OverviewSlide {
           route: '/url-launcher',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add url_launcher',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: r'''
 if (!await launchUrl(_url)) {
   throw Exception('Could not launch $_url');

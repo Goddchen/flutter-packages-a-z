@@ -14,6 +14,7 @@ class OverviewSlide extends FlutterDeckSlideWidget {
   final Set<SupportedPlatform> packageSupportedPlatforms;
   final String packageVersion;
   final Iterable<Widget> samples;
+  final bool showInstallCommand;
 
   OverviewSlide({
     required this.bulletPoints,
@@ -26,6 +27,7 @@ class OverviewSlide extends FlutterDeckSlideWidget {
     required String route,
     required this.samples,
     required String title,
+    this.showInstallCommand = true,
   }) : super(
           configuration: FlutterDeckSlideConfiguration(
             header: FlutterDeckHeaderConfiguration(title: title),
@@ -75,9 +77,10 @@ class OverviewSlide extends FlutterDeckSlideWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      FlutterDeckCodeHighlight(
-                        code: '\$ flutter pub add $packageName',
-                      ),
+                      if (showInstallCommand)
+                        FlutterDeckCodeHighlight(
+                          code: '\$ flutter pub add $packageName',
+                        ),
                       const SizedBox(height: 16),
                       ...samples.expand(
                         (Widget element) => <Widget>[

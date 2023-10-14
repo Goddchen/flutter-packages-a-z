@@ -32,10 +32,6 @@ class DioSlide extends OverviewSlide {
           route: '/dio',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add dio',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 final dio = Dio();
 
