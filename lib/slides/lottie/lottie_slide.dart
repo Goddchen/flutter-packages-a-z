@@ -29,10 +29,6 @@ class LottieSlide extends OverviewSlide {
           route: '/lottie',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add lottie',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 // Load a Lottie file from your assets
 Lottie.asset('assets/LottieLogo1.json'),

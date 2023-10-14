@@ -30,10 +30,6 @@ class QrFlutterSlide extends OverviewSlide {
           route: '/qr_flutter',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add qr_flutter',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 QrImageView(
   data: '1234567890',

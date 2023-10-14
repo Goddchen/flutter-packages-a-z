@@ -30,10 +30,6 @@ class CachedNetworkImageSlide extends OverviewSlide {
           route: '/cached_network_image',
           samples: const <FlutterDeckCodeHighlight>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add cached_network_image',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 CachedNetworkImage(
   imageUrl: "http://via.placeholder.com/350x150",

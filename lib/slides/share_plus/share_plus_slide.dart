@@ -27,10 +27,6 @@ class SharePlusSlide extends OverviewSlide {
           route: '/share-plus',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add share_plus',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: r'''
 Share.share('check out my website https://example.com');
 

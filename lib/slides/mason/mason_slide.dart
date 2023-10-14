@@ -94,6 +94,7 @@ package:mason contains the core generator that powers package:mason_cli and can 
               ),
             ),
           ],
+          showInstallCommand: false,
           title: 'mason',
         );
 }

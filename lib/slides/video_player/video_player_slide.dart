@@ -24,10 +24,6 @@ class VideoPlayerSlide extends OverviewSlide {
           route: '/video-player',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add video_player',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 _controller = VideoPlayerController.networkUrl(Uri.parse(
   'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'))

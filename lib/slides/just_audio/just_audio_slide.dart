@@ -29,10 +29,6 @@ class JustAudioSlide extends OverviewSlide {
           route: '/just-audio',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add just_audio',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 final player = AudioPlayer();
 final duration = await player.setUrl('https://foo.com/bar.mp3');

@@ -24,10 +24,6 @@ class FlutterZoomDrawerSlide extends OverviewSlide {
           packageVersion: '3.1.1',
           route: '/flutter-zoom-drawer',
           samples: const <Widget>[
-            FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add flutter_zoom_drawer',
-              language: 'bash',
-            ),
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
                 textStyle: TextStyle(fontSize: 18),

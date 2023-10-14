@@ -29,10 +29,6 @@ class FpDartSlide extends OverviewSlide {
           route: '/fpart',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add fpdart',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 int value = optionOf(10).map((int value) => value * 2).getOrElse(() => -1);''',
             ),

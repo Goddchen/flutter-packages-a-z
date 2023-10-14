@@ -25,10 +25,6 @@ class YoutubePlayerIframeSlide extends OverviewSlide {
           packageVersion: '4.0.4',
           route: '/youtube-player-iframe',
           samples: const <Widget>[
-            FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add youtube_player_iframe',
-              language: 'bash',
-            ),
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
                 textStyle: TextStyle(fontSize: 18),

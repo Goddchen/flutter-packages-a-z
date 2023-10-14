@@ -29,10 +29,6 @@ class FlutterHooksSlide extends OverviewSlide {
           route: '/flutter-hooks',
           samples: const <Widget>[
             FlutterDeckCodeHighlight(
-              code: r'$ flutter pub add flutter_hooks',
-              language: 'bash',
-            ),
-            FlutterDeckCodeHighlight(
               code: '''
 class Example extends HookWidget {
   const Example({Key? key, required this.duration})
