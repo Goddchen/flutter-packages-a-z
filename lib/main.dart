@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/gen/assets.gen.dart';
@@ -48,6 +49,8 @@ import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player
 import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player_iframe_slide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   GetIt.I.registerSingleton(NavigationService());
@@ -59,6 +62,11 @@ void main() {
           description: 'Flutter developer from Germany',
           socialHandle: '@Goddchen',
           imagePath: Assets.avatar.path,
+        ),
+        configuration: const FlutterDeckConfiguration(
+          footer: FlutterDeckFooterConfiguration(
+            widget: _CustomFooter(),
+          ),
         ),
         slides: <FlutterDeckSlideWidget>[
           const TitleSlide(),
@@ -109,4 +117,47 @@ void main() {
       ),
     ),
   );
+}
+
+class _CustomFooter extends StatelessWidget {
+  const _CustomFooter();
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<PackageInfo>(
+        future: PackageInfo.fromPlatform(),
+        builder: (
+          BuildContext context,
+          AsyncSnapshot<PackageInfo> snapshot,
+        ) =>
+            snapshot.hasData
+                ? RichText(
+                    text: TextSpan(
+                      children: <InlineSpan>[
+                        if (snapshot.data
+                            case final PackageInfo packageInfo) ...<InlineSpan>[
+                          TextSpan(text: packageInfo.version),
+                          const TextSpan(text: ' - '),
+                        ],
+                        TextSpan(
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => launchUrl(
+                                  Uri.parse(
+                                    'https://github.com/Goddchen/flutter-packages-a-z',
+                                  ),
+                                  mode: LaunchMode.externalApplication,
+                                ),
+                          style: TextStyle(
+                            color: FlutterDeckTheme.of(context)
+                                .materialTheme
+                                .colorScheme
+                                .primary,
+                          ),
+                          text:
+                              'https://github.com/Goddchen/flutter-packages-a-z',
+                        ),
+                      ],
+                    ),
+                  )
+                : const CircularProgressIndicator(),
+      );
 }
