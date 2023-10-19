@@ -22,6 +22,7 @@ import 'package:flutter_packages_a_z/slides/fluttertoast/fluttertoast_slide.dart
 import 'package:flutter_packages_a_z/slides/fpdart/fpdart_slide.dart';
 import 'package:flutter_packages_a_z/slides/go_router/go_router_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/go_router/go_router_slide.dart';
+import 'package:flutter_packages_a_z/slides/isar/isar_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/just_audio/just_audio_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/just_audio/just_audio_slide.dart';
 import 'package:flutter_packages_a_z/slides/lottie/lottie_sample_slide.dart';
@@ -76,6 +77,7 @@ void main() {
           GoRouterSampleSlide(),
           FlutterHooksSlide(),
           FlutterHooksSampleSlide(),
+          IsarSampleSlide(),
           JustAudioSlide(),
           JustAudioSampleSlide(),
           LottieSlide(),
