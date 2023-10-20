@@ -23,6 +23,7 @@ import 'package:flutter_packages_a_z/slides/fpdart/fpdart_slide.dart';
 import 'package:flutter_packages_a_z/slides/go_router/go_router_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/go_router/go_router_slide.dart';
 import 'package:flutter_packages_a_z/slides/isar/isar_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/isar/isar_slide.dart';
 import 'package:flutter_packages_a_z/slides/just_audio/just_audio_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/just_audio/just_audio_slide.dart';
 import 'package:flutter_packages_a_z/slides/lottie/lottie_sample_slide.dart';
@@ -49,9 +50,11 @@ import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player
 import 'package:flutter_packages_a_z/slides/youtube_player_iframe/youtube_player_iframe_slide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
+import 'package:isar/isar.dart';
 
-void main() {
+void main() async {
   GetIt.I.registerSingleton(NavigationService());
+  await Isar.initialize();
   runApp(
     ProviderScope(
       child: FlutterDeckApp(
@@ -77,6 +80,7 @@ void main() {
           GoRouterSampleSlide(),
           FlutterHooksSlide(),
           FlutterHooksSampleSlide(),
+          IsarSlide(),
           IsarSampleSlide(),
           JustAudioSlide(),
           JustAudioSampleSlide(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_packages_a_z/slides/sample_slide.dart';
 import 'package:isar/isar.dart';
 
@@ -8,19 +9,82 @@ class IsarSampleSlide extends SampleSlide {
   IsarSampleSlide()
       : super(
           route: '/isar-sample',
-          sampleCodes: const <Widget>[],
-          sampleWidget: const Placeholder(),
+          sampleCodes: const <Widget>[
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 14),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: r'''
+            class __IsarSampleState extends State<_IsarSample> {
+              late final Isar _isar;
+            
+              @override
+              Widget build(BuildContext context) => Theme(
+                    data: FlutterDeckTheme.of(context).materialTheme,
+                    child: Scaffold(
+                      body: ListView(
+              children: _isar.tests
+                  .where()
+                  .findAll()
+                  .map(
+                    (Test e) => Text('id: ${e.id}, text: ${e.text}'),
+                  )
+                  .toList()
+                  .reversed
+                  .toList(),
+                      ),
+                      floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                _isar.write(
+                  (Isar isar) => isar.tests.put(
+                    Test(
+                      id: DateTime.now().millisecondsSinceEpoch,
+                      text: DateTime.now().toString(),
+                    ),
+                  ),
+                );
+                setState(() {});
+              },
+              child: const Icon(Icons.add),
+                      ),
+                    ),
+                  );
+            
+              @override
+              void dispose() {
+                _isar.close();
+                super.dispose();
+              }
+            
+              @override
+              void initState() {
+                super.initState();
+                _isar = Isar.open(
+                  engine: IsarEngine.sqlite,
+                  schemas: <IsarGeneratedSchema>[TestSchema],
+                  directory: Isar.sqliteInMemory,
+                );
+              }
+            }''',
+              ),
+            ),
+          ],
+          sampleWidget: const _IsarSample(),
           title: 'isar',
         );
 }
 
 @collection
 class Test {
-  Id id = Isar.autoIncrement;
-  String? text;
-}
+  Test({
+    required this.id,
+    required this.text,
+  });
 
-class Test2Schema 
+  int id;
+  String text;
+}
 
 class _IsarSample extends StatefulWidget {
   const _IsarSample();
@@ -33,32 +97,50 @@ class __IsarSampleState extends State<_IsarSample> {
   late final Isar _isar;
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        body: StreamBuilder<void>(
-          stream: _isar.tests.watchLazy(fireImmediately: true),
-          builder: (_, __) => ListView(
+  Widget build(BuildContext context) => Theme(
+        data: FlutterDeckTheme.of(context).materialTheme,
+        child: Scaffold(
+          body: ListView(
             children: _isar.tests
                 .where()
-                .findAllSync()
+                .findAll()
                 .map(
-                  (Test e) => Text(e.text ?? ''),
+                  (Test e) => Text('id: ${e.id}, text: ${e.text}'),
                 )
+                .toList()
+                .reversed
                 .toList(),
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () =>
-              _isar.tests.put(Test()..text = DateTime.now().toString()),
-          child: const Icon(Icons.add),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              _isar.write(
+                (Isar isar) => isar.tests.put(
+                  Test(
+                    id: DateTime.now().millisecondsSinceEpoch,
+                    text: DateTime.now().toString(),
+                  ),
+                ),
+              );
+              setState(() {});
+            },
+            child: const Icon(Icons.add),
+          ),
         ),
       );
 
   @override
+  void dispose() {
+    _isar.close();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
-    _isar = Isar.openSync(
-      <CollectionSchema<dynamic>>[TestSchema],
-      directory: '.',
+    _isar = Isar.open(
+      engine: IsarEngine.sqlite,
+      schemas: <IsarGeneratedSchema>[TestSchema],
+      directory: Isar.sqliteInMemory,
     );
   }
 }
