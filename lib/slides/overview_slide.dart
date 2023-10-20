@@ -56,43 +56,46 @@ class OverviewSlide extends FlutterDeckSlideWidget {
           ],
         ),
         rightBuilder: (BuildContext context) => FlutterDeckSlideStepsBuilder(
-          builder: (BuildContext context, int stepNumber) => Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ...bulletPoints.mapWithIndex(
-                (String bulletPoint, int index) => AnimatedOpacity(
-                  opacity: stepNumber >= index + 2 ? 1 : 0,
+          builder: (BuildContext context, int stepNumber) =>
+              SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ...bulletPoints.mapWithIndex(
+                  (String bulletPoint, int index) => AnimatedOpacity(
+                    opacity: stepNumber >= index + 2 ? 1 : 0,
+                    duration: stepAnimationDuration,
+                    child: BulletPoint(text: bulletPoint),
+                  ),
+                ),
+                const SizedBox(height: 32),
+                AnimatedOpacity(
+                  opacity: stepNumber >= bulletPoints.length + 2 ? 1 : 0,
                   duration: stepAnimationDuration,
-                  child: BulletPoint(text: bulletPoint),
-                ),
-              ),
-              const SizedBox(height: 32),
-              AnimatedOpacity(
-                opacity: stepNumber >= bulletPoints.length + 2 ? 1 : 0,
-                duration: stepAnimationDuration,
-                child: FlutterDeckCodeHighlightTheme(
-                  data: const FlutterDeckCodeHighlightThemeData(
-                    textStyle: TextStyle(fontSize: 24),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      if (showInstallCommand)
-                        FlutterDeckCodeHighlight(
-                          code: '\$ flutter pub add $packageName',
-                        ),
-                      const SizedBox(height: 16),
-                      ...samples.expand(
-                        (Widget element) => <Widget>[
-                          element,
-                          const SizedBox(height: 16),
-                        ],
-                      )..dropRight(),
-                    ],
+                  child: FlutterDeckCodeHighlightTheme(
+                    data: const FlutterDeckCodeHighlightThemeData(
+                      textStyle: TextStyle(fontSize: 24),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        if (showInstallCommand)
+                          FlutterDeckCodeHighlight(
+                            code: '\$ flutter pub add $packageName',
+                          ),
+                        const SizedBox(height: 16),
+                        ...samples.expand(
+                          (Widget element) => <Widget>[
+                            element,
+                            const SizedBox(height: 16),
+                          ],
+                        )..dropRight(),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );
