@@ -33,6 +33,8 @@ import 'package:flutter_packages_a_z/slides/lottie/lottie_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/lottie/lottie_slide.dart';
 import 'package:flutter_packages_a_z/slides/mason/mason_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/mason/mason_slide.dart';
+import 'package:flutter_packages_a_z/slides/package_info_plus/package_info_plus_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/package_info_plus/package_info_plus_slide.dart';
 import 'package:flutter_packages_a_z/slides/qr_flutter/qr_flutter_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/qr_flutter/qr_flutter_slide.dart';
 import 'package:flutter_packages_a_z/slides/questions/questions_slide.dart';
@@ -102,6 +104,8 @@ void main() async {
           FlutterNativeSplashSampleSlide(),
           FlutterOsmPluginSlide(),
           FlutterOsmPluginSampleSlide(),
+          PackageInfoPlusSlide(),
+          PackageInfoPlusSampleSlide(),
           QrFlutterSlide(),
           QrFlutterSampleSlide(),
           RiverpodSlide(),
