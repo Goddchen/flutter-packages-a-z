@@ -17,7 +17,7 @@
 - M: https://pub.dev/packages/mason
 - N: https://pub.dev/packages/flutter_native_splash
 - O: https://pub.dev/packages/flutter_osm_plugin
-- P: https://pub.dev/packages/path_provider
+- P: https://pub.dev/packages/package_info_plus
 - Q: https://pub.dev/packages/qr_flutter
 - R: https://pub.dev/packages/riverpod
 - S: https://pub.dev/packages/share_plus
@@ -25,6 +25,6 @@
 - U: https://pub.dev/packages/url_launcher
 - V: https://pub.dev/packages/video_player
 - W: https://pub.dev/packages/wakelock_plus
-- X: https://pub.dev/packages/xml (thanks @ayato91 for suggestion this one)
+- X: https://pub.dev/packages/xml (thanks @ayato91 for suggesting this one)
 - Y: https://pub.dev/packages/youtube_player_iframe
 - Z: https://pub.dev/packages/flutter_zoom_drawer
