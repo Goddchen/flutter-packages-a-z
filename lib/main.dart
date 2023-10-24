@@ -14,6 +14,8 @@ import 'package:flutter_packages_a_z/slides/equatable/equatable_sample_slide.dar
 import 'package:flutter_packages_a_z/slides/equatable/equatable_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_hooks/flutter_hooks_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_hooks/flutter_hooks_slide.dart';
+import 'package:flutter_packages_a_z/slides/flutter_keyboard_visibility/flutter_keyboard_visibility_sample_slide.dart';
+import 'package:flutter_packages_a_z/slides/flutter_keyboard_visibility/flutter_keyboard_visibility_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_native_splash/flutter_native_splash_sample_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_native_splash/flutter_native_splash_slide.dart';
 import 'package:flutter_packages_a_z/slides/flutter_osm_plugin/flutter_osm_plugin_sample_slide.dart';
@@ -96,6 +98,8 @@ void main() async {
           IsarSampleSlide(),
           JustAudioSlide(),
           JustAudioSampleSlide(),
+          FlutterKeyboardVisibilitySlide(),
+          FlutterKeyboardVisibilitySampleSlide(),
           LottieSlide(),
           LottieSampleSlide(),
           MasonSlide(),
