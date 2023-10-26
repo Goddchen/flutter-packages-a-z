@@ -48,12 +48,18 @@ class PackageBadge extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Text(
-                  '$_name ($_version)',
+                  _name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
                 const SizedBox(height: 8),
+                Text(
+                  'v$_version',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
                 Text(
                   _author,
                   maxLines: 1,
