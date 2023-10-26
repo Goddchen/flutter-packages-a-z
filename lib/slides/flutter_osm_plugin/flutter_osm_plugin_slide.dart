@@ -28,7 +28,7 @@ class FlutterOsmPluginSlide extends OverviewSlide {
           samples: const <Widget>[
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
-                textStyle: TextStyle(fontSize: 8),
+                textStyle: TextStyle(fontSize: 16),
               ),
               child: FlutterDeckCodeHighlight(
                 code: '''

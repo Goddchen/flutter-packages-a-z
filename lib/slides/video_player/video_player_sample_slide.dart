@@ -10,7 +10,7 @@ class VideoPlayerSampleSlide extends SampleSlide {
           sampleCodes: const <Widget>[
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
-                textStyle: TextStyle(fontSize: 14),
+                textStyle: TextStyle(fontSize: 12),
               ),
               child: FlutterDeckCodeHighlight(
                 code: '''

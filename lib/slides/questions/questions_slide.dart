@@ -12,11 +12,15 @@ class QuestionsSlide extends FlutterDeckSlideWidget {
         );
 
   @override
-  FlutterDeckSlide build(BuildContext context) => FlutterDeckSlide.template(
-        contentBuilder: (BuildContext context) => Column(
+  FlutterDeckSlide build(BuildContext context) => FlutterDeckSlide.blank(
+        builder: (BuildContext context) => Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Assets.dashQuestions.image(fit: BoxFit.contain),
+            Flexible(
+              child: Assets.dashQuestions.image(
+                fit: BoxFit.contain,
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -42,13 +46,13 @@ class QuestionsSlide extends FlutterDeckSlideWidget {
                 ),
               ],
             ),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Dash image source: https://github.com/ManasMalla/DashingThrough',
+              ),
+            ),
           ],
-        ),
-        footerBuilder: (BuildContext context) => const Padding(
-          padding: EdgeInsets.all(16),
-          child: Text(
-            'Dash image source: https://github.com/ManasMalla/DashingThrough',
-          ),
         ),
       );
 }

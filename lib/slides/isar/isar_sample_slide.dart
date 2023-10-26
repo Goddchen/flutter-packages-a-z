@@ -12,7 +12,7 @@ class IsarSampleSlide extends SampleSlide {
           sampleCodes: const <Widget>[
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
-                textStyle: TextStyle(fontSize: 14),
+                textStyle: TextStyle(fontSize: 12),
               ),
               child: FlutterDeckCodeHighlight(
                 code: r'''
@@ -105,7 +105,10 @@ class __IsarSampleState extends State<_IsarSample> {
                 .where()
                 .findAll()
                 .map(
-                  (Test e) => Text('id: ${e.id}, text: ${e.text}'),
+                  (Test e) => Text(
+                    'id: ${e.id}, text: ${e.text}',
+                    style: const TextStyle(fontSize: 20),
+                  ),
                 )
                 .toList()
                 .reversed

@@ -67,16 +67,16 @@ void main() async {
   runApp(
     ProviderScope(
       child: FlutterDeckApp(
+        configuration: const FlutterDeckConfiguration(
+          footer: FlutterDeckFooterConfiguration(
+            widget: _CustomFooter(),
+          ),
+        ),
         speakerInfo: FlutterDeckSpeakerInfo(
           name: 'Martin "Goddchen" Liersch',
           description: 'Flutter developer from Germany',
           socialHandle: '@Goddchen',
           imagePath: Assets.avatar.path,
-        ),
-        configuration: const FlutterDeckConfiguration(
-          footer: FlutterDeckFooterConfiguration(
-            widget: _CustomFooter(),
-          ),
         ),
         slides: <FlutterDeckSlideWidget>[
           const TitleSlide(),
