@@ -46,24 +46,29 @@ class EquatablePerson extends Equatable {
   bool? get stringify => true;
 }''',
             ),
-            FlutterDeckCodeHighlight(
-              code: '''
-@immutable
-class ImmutablePerson {
-  final String name;
-
-  const ImmutablePerson({required this.name});
-
-  @override
-  int get hashCode => name.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ImmutablePerson &&
-          runtimeType == other.runtimeType &&
-          name == other.name;
-}''',
+            FlutterDeckCodeHighlightTheme(
+              data: FlutterDeckCodeHighlightThemeData(
+                textStyle: TextStyle(fontSize: 16),
+              ),
+              child: FlutterDeckCodeHighlight(
+                code: '''
+            @immutable
+            class ImmutablePerson {
+              final String name;
+            
+              const ImmutablePerson({required this.name});
+            
+              @override
+              int get hashCode => name.hashCode;
+            
+              @override
+              bool operator ==(Object other) =>
+                  identical(this, other) ||
+                  other is ImmutablePerson &&
+                      runtimeType == other.runtimeType &&
+                      name == other.name;
+            }''',
+              ),
             ),
             FlutterDeckCodeHighlight(
               code: '''
@@ -74,39 +79,36 @@ class Person {
 }''',
             ),
           ],
-          sampleWidget: DefaultTextStyle(
-            style: const TextStyle(fontSize: 22),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text('person1.toString() -> $person1'),
-                Text('immutablePerson1.toString() -> $immutablePerson1'),
-                Text('equatablePerson1.toString() -> $equatablePerson1'),
-                const SizedBox(height: 16),
-                Text('person1.hashCode -> ${person1.hashCode}'),
-                Text('person2.hashCode -> ${person2.hashCode}'),
-                Text(
-                  'immutablePerson1.hashCode -> ${immutablePerson1.hashCode}',
-                ),
-                Text(
-                  'immutablePerson2.hashCode -> ${immutablePerson2.hashCode}',
-                ),
-                Text(
-                  'equatablePerson1.hashCode -> ${equatablePerson1.hashCode}',
-                ),
-                Text(
-                  'equatablePerson2.hashCode -> ${equatablePerson2.hashCode}',
-                ),
-                const SizedBox(height: 16),
-                Text('person1 == person2 -> ${person1 == person2}'),
-                Text(
-                  '''immutablePerson1 == immutablePerson2 -> ${immutablePerson1 == immutablePerson2}''',
-                ),
-                Text(
-                  '''equatablePerson1 == equatablePerson1 -> ${equatablePerson1 == equatablePerson1}''',
-                ),
-              ],
-            ),
+          sampleWidget: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text('person1.toString() -> $person1'),
+              Text('immutablePerson1.toString() -> $immutablePerson1'),
+              Text('equatablePerson1.toString() -> $equatablePerson1'),
+              const SizedBox(height: 16),
+              Text('person1.hashCode -> ${person1.hashCode}'),
+              Text('person2.hashCode -> ${person2.hashCode}'),
+              Text(
+                'immutablePerson1.hashCode -> ${immutablePerson1.hashCode}',
+              ),
+              Text(
+                'immutablePerson2.hashCode -> ${immutablePerson2.hashCode}',
+              ),
+              Text(
+                'equatablePerson1.hashCode -> ${equatablePerson1.hashCode}',
+              ),
+              Text(
+                'equatablePerson2.hashCode -> ${equatablePerson2.hashCode}',
+              ),
+              const SizedBox(height: 16),
+              Text('person1 == person2 -> ${person1 == person2}'),
+              Text(
+                '''immutablePerson1 == immutablePerson2 -> ${immutablePerson1 == immutablePerson2}''',
+              ),
+              Text(
+                '''equatablePerson1 == equatablePerson1 -> ${equatablePerson1 == equatablePerson1}''',
+              ),
+            ],
           ),
           title: 'equatable',
         );

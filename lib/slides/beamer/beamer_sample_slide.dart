@@ -10,7 +10,7 @@ class BeamerSampleSlide extends SampleSlide {
           sampleCodes: const <Widget>[
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
-                textStyle: TextStyle(fontSize: 18),
+                textStyle: TextStyle(fontSize: 16),
               ),
               child: FlutterDeckCodeHighlight(
                 code: '''

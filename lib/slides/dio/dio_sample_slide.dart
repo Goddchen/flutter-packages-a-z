@@ -10,7 +10,7 @@ class DioSampleSlide extends SampleSlide {
           sampleCodes: const <Widget>[
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
-                textStyle: TextStyle(fontSize: 16),
+                textStyle: TextStyle(fontSize: 14),
               ),
               child: FlutterDeckCodeHighlight(
                 code: r'''

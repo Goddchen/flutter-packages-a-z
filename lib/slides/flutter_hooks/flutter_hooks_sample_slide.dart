@@ -11,7 +11,7 @@ class FlutterHooksSampleSlide extends SampleSlide {
           sampleCodes: const <Widget>[
             FlutterDeckCodeHighlightTheme(
               data: FlutterDeckCodeHighlightThemeData(
-                textStyle: TextStyle(fontSize: 14),
+                textStyle: TextStyle(fontSize: 12),
               ),
               child: FlutterDeckCodeHighlight(
                 code: r'''
@@ -95,7 +95,10 @@ class _RightWidget extends HookWidget {
         if (asyncSnapshot.hasError)
           ErrorWidget(asyncSnapshot.error!)
         else if (asyncSnapshot.hasData)
-          Text('Result: ${asyncSnapshot.data}')
+          Text(
+            'Result: ${asyncSnapshot.data}',
+            style: FlutterDeckTheme.of(context).textTheme.bodyMedium,
+          )
         else
           CircularProgressIndicator(
             color: Theme.of(context).colorScheme.onPrimary,

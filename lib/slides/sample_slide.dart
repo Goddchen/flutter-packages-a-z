@@ -38,6 +38,9 @@ class SampleSlide extends FlutterDeckSlideWidget {
                 .toList(),
           ),
         ),
-        rightBuilder: (BuildContext context) => sampleWidget,
+        rightBuilder: (BuildContext context) => DefaultTextStyle(
+          style: FlutterDeckTheme.of(context).textTheme.bodyMedium,
+          child: sampleWidget,
+        ),
       );
 }
